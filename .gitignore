@@ -1,4 +1,5 @@
 wp-content/uploads
+wp-content/plugins
 wordpress
 
 # .gitignore from HTML5-boilerplate

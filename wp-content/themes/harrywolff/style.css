@@ -15,7 +15,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import url('../twentyeleven/style.css');
 
 body {
-	background: url(images/furley_bg.png) 0 0 repeat
+	background: url(images/furley_bg.png) 0 0 repeat !important;
 }
 
 #page {
@@ -34,26 +34,56 @@ body {
 	width: 174px;
 }
 
-	#branding #searchform {
-		top: auto;
-		right: auto;
-		bottom: -25px;
-	}
+#branding #searchform {
+	top: auto;
+	right: auto;
+	bottom: -25px;
+}
 
-	/* Nav */
-	#access {
-		background: none;
-		box-shadow: none;
-		float: none;
-	}
+/* Nav */
+#access {
+	background: none;
+	box-shadow: none;
+	float: none;
+}
 
-		#access li {
-			float: none;
-		}
+#access div {
+	margin: 30px 0 0 7.6%;
+}
 
-		#access a {
-			color: #333;
-		}
+#access li {
+	float: none;
+	border-bottom: 1px solid transparent;
+}
+
+#access a {
+	color: #333;
+}
+
+/* Hover Styling */
+#access li:hover {
+	border-bottom: 1px solid #888;
+}
+
+#access li:hover > a,
+#access a:focus {
+	background: none;
+}
+
+/* Current Menu Item */
+#access .current-menu-item,
+#access .current-menu-ancestor,
+#access .current_page_item,
+#access .current_page_ancestor {
+	border-bottom: 1px solid #bbb;
+}
+
+#access .current-menu-item > a,
+#access .current-menu-ancestor > a,
+#access .current_page_item > a,
+#access .current_page_ancestor > a {
+	font-weight: bold;
+}
 
 #site-title {
 	margin: 0;
@@ -63,25 +93,115 @@ body {
 	margin: 0;
 }
 
+#access ul ul {
+	left: 170px;
+	top: 5px;
+}
+
+#access ul ul li {
+	border-left: 3px solid transparent;
+}
+
+#access ul ul li:hover {
+	border-bottom: 1px solid transparent;
+	border-left: 3px solid #888;
+}
+
+#access ul ul li:hover > a {
+	background: #F9F9F9;
+}
+
+/* Main Content Area */
 #main {
-	display: inline-block;
+	display: block;
 	position: relative;
 	left: 175px;
 	border-left: 1px solid #eee;
-	padding: 3.65625em 0 0 30px;
+	padding: 3.65625em 0 0 0;
+	width: 82.5%;
 }
 
 #primary {
 	float: none;
-	margin: 0;
+	margin: 0 auto !important;
+	width: auto;
 }
 
-	#content {
-		margin: 0;
-		width: 700px;
-	}
+#content {
+	margin: 0;
+	width: auto;
+}
+
+.hentry,
+.no-results {
+	padding: 0 7.6% 2.625em;
+	margin: 0 0 2.625em;
+	border-bottom: 1px solid #bbb;
+}
+
+.singular .entry-header,
+.singular .entry-content,
+.singular footer.entry-meta,
+.singular #comments-title {
+	width: auto;
+}
+
+.singular.page .hentry {
+	padding: 0;
+}
+
+.singular .hentry {
+	padding: 0;
+}
+
+.singular .entry-header .entry-meta {
+	position: static;
+}
+
+.singular .entry-title,
+.singular .entry-header .entry-meta {
+	padding-top: 0;
+}
+
+.singular .entry-meta .edit-link a {
+	left: -50px;
+	top: 16px;
+}
+
+.entry-header .by-author {
+	display: none;
+}
+
+.entry-header .comments-link a {
+	background: transparent url(images/comment-bubble.png) no-repeat;
+}
+
+.entry-header .comments-link a:hover,
+.entry-header .comments-link a:focus,
+.entry-header .comments-link a:active {
+	background-color: transparent;
+	color: #aaa;
+}
 
 /* Widgets */
 #secondary {
 	display: none;
+}
+
+/* Footer */
+#colophon {
+	width: 82.5%;
+	position: relative;
+	left: 175px;
+	margin-top: 60px;
+}
+
+#site-generator {
+	display: none;
+}
+
+#content nav,
+.page-header {
+	width: 84.8%;
+	margin: 0 auto;
 }

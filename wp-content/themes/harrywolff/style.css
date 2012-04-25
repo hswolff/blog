@@ -63,6 +63,7 @@ body {
 #access li:hover > a,
 #access a:focus {
 	background: none;
+	color: #888;
 }
 
 /* Current Menu Item */

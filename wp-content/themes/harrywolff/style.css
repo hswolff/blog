@@ -124,10 +124,11 @@ body {
 
 #access ul ul li {
 	border-left: 3px solid transparent;
+	border-bottom: 1px solid #fff;
 }
 
 #access ul ul li:hover {
-	border-bottom: 1px solid transparent;
+	border-bottom: 1px solid #fff;
 	border-left: 3px solid #888;
 }
 

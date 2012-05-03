@@ -101,3 +101,12 @@
 
 
 	<div id="main">
+		<div id="branding-hello" class="clearfix hentry">
+			<div class="content">
+				<h1>Hello.  My name is <strong>Harry Wolff</strong>.</h1>
+				<p>I am web developer working at <a href="http://getglue.com/">GetGlue</a>.</p>
+				<p>I enjoy <a href="http://twitter.com/hswolff">tweeting</a>, <a href="http://ink361.com/hswolff">taking pictures</a>, and <a href="http://npeaches.org/">making movies</a>.</p>
+				<p>This is where I write.</p>
+			</div>
+			<a href="/about"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/profile.jpg" alt="Profile Picture" class="alignright"/></a>
+		</div>

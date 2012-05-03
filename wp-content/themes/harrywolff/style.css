@@ -32,7 +32,7 @@ body {
 #branding #searchform {
 	top: auto;
 	right: auto;
-	bottom: -25px;
+	bottom: 25px;
 }
 
 /* Nav */
@@ -53,6 +53,34 @@ body {
 
 #access a {
 	color: #333;
+}
+
+#branding #s:focus {
+	width: 125px;
+}
+
+#branding-hello {
+	padding: 0 7.6%;
+	position: relative;
+	border-bottom: 1px solid #BBB;
+	margin: 0 0 2.625em;
+}
+
+#branding-hello .content {
+	float: left;
+}
+
+#branding-hello .content h1 {
+	font-size: 22px;
+	margin-bottom: 15px;
+}
+
+#branding-hello .content p {
+	margin-bottom: 1.2em;
+}
+
+#branding-hello a img {
+	width: 100px;
 }
 
 /* Hover Styling */
@@ -201,3 +229,8 @@ body {
 	width: 84.8%;
 	margin: 0 auto;
 }
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }

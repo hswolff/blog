@@ -62,7 +62,7 @@ body {
 #branding-hello {
 	padding: 0 7.6%;
 	position: relative;
-	border-bottom: 1px solid #BBB;
+	border-bottom: 0;
 	margin: 0;
 }
 
@@ -71,12 +71,12 @@ body {
 }
 
 #branding-hello .content h1 {
-	font-size: 22px;
+	font-size: 28px;
 	margin-bottom: 15px;
 }
 
 #branding-hello .content p {
-	margin-bottom: 1.2em;
+	margin-bottom: 10px;
 }
 
 #branding-hello a img {
@@ -162,6 +162,16 @@ body {
 	margin: 0;
 	padding: 0 7.6%;
 	width: auto;
+	background: white;
+	border: 1px solid #bbb;
+	border-left: 0;
+}
+
+#content .hentry {
+	background: white;
+	margin-bottom: 40px;
+	border: 1px solid #bbb;
+	border-left: 0;
 }
 
 .hentry,
@@ -186,8 +196,9 @@ body {
 	padding: 2.625em 0 0 0;
 }
 
-.singular .hentry {
+.singular #content .hentry {
 	padding: 2.625em 0 0 0;
+	border: 0;
 }
 
 .singular .entry-header .entry-meta {

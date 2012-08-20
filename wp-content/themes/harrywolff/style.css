@@ -63,7 +63,7 @@ body {
 	padding: 0 7.6%;
 	position: relative;
 	border-bottom: 1px solid #BBB;
-	margin: 0 0 2.625em;
+	margin: 0;
 }
 
 #branding-hello .content {
@@ -153,15 +153,26 @@ body {
 }
 
 #content {
+	width: auto;
 	margin: 0;
+}
+
+.singular #content,
+.left-sidebar.singular #content {
+	margin: 0;
+	padding: 0 7.6%;
 	width: auto;
 }
 
 .hentry,
 .no-results {
-	padding: 0 7.6% 2.625em;
-	margin: 0 0 2.625em;
+	padding: 2.625em 7.6%;
+	margin: 0;
 	border-bottom: 1px solid #bbb;
+}
+
+.entry-header .entry-format {
+	top: 2.625em;
 }
 
 .singular .entry-header,
@@ -172,11 +183,11 @@ body {
 }
 
 .singular.page .hentry {
-	padding: 0;
+	padding: 2.625em 0 0 0;
 }
 
 .singular .hentry {
-	padding: 0;
+	padding: 2.625em 0 0 0;
 }
 
 .singular .entry-header .entry-meta {
@@ -235,6 +246,10 @@ body {
 .page-header {
 	width: 84.8%;
 	margin: 0 auto;
+}
+
+.page-title {
+	margin: 2.625em 0 0;
 }
 
 /* Contain floats: h5bp.com/q */

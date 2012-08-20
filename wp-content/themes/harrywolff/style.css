@@ -208,6 +208,12 @@ body {
 	color: #aaa;
 }
 
+.entry-content h3, .comment-content h3 {
+	font-weight: bold;
+	text-transform: none;
+	font-size: 13px;
+}
+
 /* Widgets */
 #secondary {
 	display: none;

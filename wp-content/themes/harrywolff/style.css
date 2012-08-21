@@ -169,9 +169,9 @@ body {
 
 #content .hentry {
 	background: rgba(255, 255, 255, 0.8);
-	margin-bottom: 40px;
 	border: 1px solid #bbb;
 	border-left: 0;
+	border-bottom: 0;
 }
 
 .hentry,
@@ -260,6 +260,11 @@ body {
 .page-header {
 	width: 84.8%;
 	margin: 0 auto;
+}
+
+#content #nav-below {
+	padding: 1.625em 7.6%;
+	border-top: 1px solid #bbb;
 }
 
 .page-title {

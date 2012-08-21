@@ -162,13 +162,13 @@ body {
 	margin: 0;
 	padding: 0 7.6%;
 	width: auto;
-	background: white;
+	background: rgba(255, 255, 255, 0.75);
 	border: 1px solid #bbb;
 	border-left: 0;
 }
 
 #content .hentry {
-	background: white;
+	background: rgba(255, 255, 255, 0.75);
 	margin-bottom: 40px;
 	border: 1px solid #bbb;
 	border-left: 0;
@@ -247,6 +247,7 @@ body {
 	position: relative;
 	left: 175px;
 	margin-top: 60px;
+	display: none;
 }
 
 #site-generator {

@@ -162,13 +162,13 @@ body {
 	margin: 0;
 	padding: 0 7.6%;
 	width: auto;
-	background: rgba(255, 255, 255, 0.75);
+	background: rgba(255, 255, 255, 0.8);
 	border: 1px solid #bbb;
 	border-left: 0;
 }
 
 #content .hentry {
-	background: rgba(255, 255, 255, 0.75);
+	background: rgba(255, 255, 255, 0.8);
 	margin-bottom: 40px;
 	border: 1px solid #bbb;
 	border-left: 0;
@@ -221,6 +221,8 @@ body {
 
 .entry-header .comments-link a {
 	background: transparent url(images/comment-bubble.png) no-repeat;
+	top: 4.5em;
+	right: 7.6%;
 }
 
 .entry-header .comments-link a:hover,

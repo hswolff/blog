@@ -13,6 +13,10 @@ body {
 	background: url(images/furley_bg.png) 0 0 repeat !important;
 }
 
+li > p {
+	margin: 0;
+}
+
 #page {
 	margin: 0 auto;
 	background: none;

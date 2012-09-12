@@ -104,7 +104,7 @@
 		<div id="branding-hello" class="clearfix hentry">
 			<div class="content">
 				<h1>Hello.  My name is <strong>Harry Wolff</strong>.</h1>
-				<p>I am a web developer working at <a href="http://getglue.com/" target="_blank">GetGlue</a>.</p>
+				<p>I am a <a href="https://github.com/hswolff">web developer</a> working at <a href="http://getglue.com/" target="_blank">GetGlue</a>.</p>
 				<p>I enjoy <a href="http://twitter.com/hswolff" target="_blank">tweeting</a>, <a href="http://ink361.com/hswolff" target="_blank">taking pictures</a>, and <a href="http://npeaches.org/" target="_blank">making movies</a>.</p>
 				<p>This is where I write.</p>
 			</div>

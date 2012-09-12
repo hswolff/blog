@@ -1,5 +1,6 @@
 wp-content/uploads
 wp-content/plugins
+wp-content/themes/twentyeleven
 wordpress
 
 # .gitignore from HTML5-boilerplate

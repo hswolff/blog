@@ -178,6 +178,10 @@ li > p {
 	border-bottom: 0;
 }
 
+.single #content .hentry {
+	background: none;
+}
+
 .hentry,
 .no-results {
 	padding: 2.625em 7.6%;

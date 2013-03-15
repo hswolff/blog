@@ -1,7 +1,12 @@
-wp-content/uploads
-wp-content/plugins
-wp-content/themes/twentyeleven
-wordpress
+wp
+
+# .gitignore from WordPress-Skeleton
+/shared
+/local-config.php
+/sql-dump-*.sql
+/db-sync
+/content/upgrade/
+.DS_Store
 
 # .gitignore from HTML5-boilerplate
 # https://github.com/h5bp/html5-boilerplate/blob/master/.gitignore

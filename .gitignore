@@ -1,3 +1,5 @@
+content/plugins
+
 # .gitignore from WordPress-Skeleton
 /shared
 /local-config.php

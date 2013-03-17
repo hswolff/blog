@@ -1,4 +1,5 @@
 content/plugins
+node_modules
 
 # .gitignore from WordPress-Skeleton
 /shared

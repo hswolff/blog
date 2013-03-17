@@ -1,5 +1,3 @@
-wp
-
 # .gitignore from WordPress-Skeleton
 /shared
 /local-config.php

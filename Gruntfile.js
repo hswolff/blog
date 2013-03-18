@@ -12,10 +12,6 @@ module.exports = function(grunt) {
             assets: '<%= theme.root %>/library'
         },
 
-        // live reload, in case you want to change the port or anything
-        // livereload: {
-        // },
-
         // uglify to concat, minify, and make source maps
         // uglify: {
         //     dist: {
@@ -37,15 +33,15 @@ module.exports = function(grunt) {
 
         // compass and scss
         compass: {
-            dist: {
-                options: {
-                    sassDir: '<%= theme.assets %>/scss',
-                    cssDir: '<%= theme.assets %>/css',
-                    imagesDir: '<%= theme.assets %>/images',
-                    force: true
-                    // relativeAssets: 'true'
-                }
-            }
+            options: {
+                sassDir: '<%= theme.assets %>/scss',
+                cssDir: '<%= theme.assets %>/css',
+                imagesDir: '<%= theme.assets %>/images',
+                javascriptsDir: '<%= theme.assets %>/js',
+                force: true
+                // relativeAssets: true
+            },
+            dist: {}
         },
 
         // regarde to watch for changes and trigger compass, jshint, uglify and live reload
@@ -101,9 +97,9 @@ module.exports = function(grunt) {
 
     // register task
     grunt.registerTask('default', [
-        // 'livereload-start',
         'compass',
         // 'uglify',
+        'livereload-start',
         'regarde'
     ]);
 

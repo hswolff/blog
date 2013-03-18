@@ -125,6 +125,10 @@ function bones_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   if (!is_admin()) {
 
+  	if (WP_LOCAL_DEV) {
+  		wp_register_script( 'livereload', get_stylesheet_directory_uri() . '/library/js/libs/livereload.js?host=' .$_SERVER['HTTP_HOST']. '&amp;port=35729', array(), null, false );
+  	}
+
     // modernizr (without media query polyfill)
     wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
@@ -143,6 +147,9 @@ function bones_scripts_and_styles() {
     wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
     // enqueue styles and scripts
+    if (WP_LOCAL_DEV) {
+    	wp_enqueue_script( 'livereload' );
+    }
     wp_enqueue_script( 'bones-modernizr' );
     wp_enqueue_style( 'bones-stylesheet' );
     wp_enqueue_style('bones-ie-only');

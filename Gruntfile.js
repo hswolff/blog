@@ -56,7 +56,8 @@ module.exports = function(grunt) {
             },
             livereload: {
                 files: [
-                    '<%= theme.assets %>/css/*.css'
+                    '<%= theme.assets %>/css/*.css',
+                    '<%= theme.root %>/**/*.php'
                 ],
                 tasks: ['livereload']
             }

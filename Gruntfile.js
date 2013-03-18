@@ -48,11 +48,17 @@ module.exports = function(grunt) {
         regarde: {
             compass: {
                 files: '<%= theme.assets %>/scss/**/*',
-                tasks: ['compass', 'livereload']
+                tasks: ['compass']
             },
             js: {
                 files: '<%= theme.assets %>/js/**/*',
                 tasks: ['jshint', 'uglify', 'livereload']
+            },
+            livereload: {
+                files: [
+                    '<%= theme.assets %>/css/*.css'
+                ],
+                tasks: ['livereload']
             }
         },
 

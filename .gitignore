@@ -1,6 +1,6 @@
 # theme ignores
-content/themes/harrywolff_2/library/css
-
+content/themes/harrywolff_2/library/css/*
+!content/themes/harrywolff_2/library/css/.gitignore
 
 content/plugins
 node_modules

@@ -1,3 +1,7 @@
+# theme ignores
+content/themes/harrywolff_2/library/css
+
+
 content/plugins
 node_modules
 

@@ -150,9 +150,15 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	background: #2B5A82;
+}
 
-	#logo {}
+	#logo {
+		a {
+			color: #EEEEE0;
+		}
+	}
 
 /*********************
 NAVIGATION STYLES
@@ -167,8 +173,9 @@ and more scalable.
 */
 
 .nav {
-	border: 1px solid #ccc;
-	border-bottom: 0;
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: $nav-border-color;
 
 	li {
 

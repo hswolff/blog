@@ -27,6 +27,13 @@ LAYOUT & GRID STYLES
 	max-width: 1140px;
 }
 
+#logo,
+#inner-content {
+	@include layout-max-width();
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /*********************
 HEADER STYLES
 *********************/
@@ -41,7 +48,11 @@ NAVIGATION STYLES
 
 .nav {
 	background: #eee;
-	border: 0;
+
+	> ul {
+		margin: 0 auto;
+		@include layout-max-width();
+	}
 
 	li {
 		float: left;
@@ -69,7 +80,7 @@ NAVIGATION STYLES
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
-			border: 1px solid #ccc;
+			border: 1px solid $nav-border-color;
 			border-top: 0;
 			position: absolute;
 			display: none;
@@ -82,7 +93,7 @@ NAVIGATION STYLES
 					border-right: 0;
 					display: block;
 					width: 180px;
-					border-bottom: 1px solid #ccc;
+					border-bottom: 1px solid $nav-border-color;
 
 					&:hover,
 					&:focus {}

@@ -11,7 +11,27 @@
 		<!-- Google Chrome Frame for IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title><?php wp_title(''); ?></title>
+		<title><?php
+			/*
+			 * Print the <title> tag based on what is being viewed.
+			 */
+			global $page, $paged;
+
+			wp_title( '|', true, 'right' );
+
+			// Add the blog name.
+			bloginfo( 'name' );
+
+			// Add the blog description for the home/front page.
+			$site_description = get_bloginfo( 'description', 'display' );
+			if ( $site_description && ( is_home() || is_front_page() ) )
+				echo " | $site_description";
+
+			// Add a page number if necessary:
+			if ( $paged >= 2 || $page >= 2 )
+				echo ' | ' . sprintf( __( 'Page %s', 'harrywolff_2' ), max( $paged, $page ) );
+
+			?></title>
 
 		<!-- mobile meta (hooray!) -->
 		<meta name="HandheldFriendly" content="True">
@@ -45,7 +65,7 @@
 
 			<header class="header" role="banner">
 
-				<div id="inner-header" class="wrap clearfix">
+				<div id="inner-header" class="clearfix">
 
 					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
 					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>

@@ -44,6 +44,13 @@ TOOLS
 	overflow: hidden;
 }
 
+/*********************
+LAYOUT
+*********************/
+@mixin layout-max-width() {
+	max-width: 960px;
+}
+
 
 /*********************
 COLORS
@@ -62,8 +69,10 @@ $white:             #fff;
 $bones-pink:        #f01d4f;
 $bones-blue:        #1990db;
 
-$link-color:        $bones-pink;
+$link-color:        $bones-blue;
 $link-hover:        darken($link-color, 9%);
+
+$nav-border-color: #ccc;
 
 /*
 Here's a great tutorial on how to

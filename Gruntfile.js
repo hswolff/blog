@@ -41,7 +41,18 @@ module.exports = function(grunt) {
                 force: true
                 // relativeAssets: true
             },
-            dist: {}
+            dev: {
+                options: {
+                    environment: 'development'
+                }
+            },
+            dist: {
+                options: {
+                    environment: 'production',
+                    outputStyle: 'compressed',
+                    noLineComments: true
+                }
+            }
         },
 
         // regarde to watch for changes and trigger compass, jshint, uglify and live reload
@@ -64,20 +75,20 @@ module.exports = function(grunt) {
         },
 
         // image optimization
-        // imagemin: {
-        //     dist: {
-        //         options: {
-        //             optimizationLevel: 7,
-        //             progressive: true
-        //         },
-        //         files: [{
-        //             expand: true,
-        //             cwd: '<%= theme.assets %>/images/',
-        //             src: '**/*',
-        //             dest: '<%= theme.assets %>/images/'
-        //         }]
-        //     }
-        // },
+        imagemin: {
+            dist: {
+                options: {
+                    optimizationLevel: 7,
+                    progressive: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= theme.assets %>/images/',
+                    src: '**/*',
+                    dest: '<%= theme.assets %>/images-optimized/'
+                }]
+            }
+        },
 
         // deploy via rsync
         rsync: {
@@ -101,11 +112,14 @@ module.exports = function(grunt) {
 
     });
 
+    grunt.registerTask('dist', [
+        'compass:dist'
+    ]);
 
     // register task
     grunt.registerTask('default', [
-        'compass',
-        // 'uglify',
+        'compass:dev',
+        // 'imagemin',
         'livereload-start',
         'regarde'
     ]);

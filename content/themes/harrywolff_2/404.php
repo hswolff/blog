@@ -4,13 +4,13 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-					<div id="main" class="eightcol first clearfix" role="main">
+					<div id="main" class=" clearfix" role="main">
 
 						<article id="post-not-found" class="hentry clearfix">
 
 							<header class="article-header">
-
-								<h1><?php _e("Epic 404 - Article Not Found", "bonestheme"); ?></h1>
+								<h1>Where did it go?</h1>
+								<h2><?php _e("404 - Article Not Found", "bonestheme"); ?></h2>
 
 							</header> <!-- end article header -->
 
@@ -28,7 +28,7 @@
 
 							<footer class="article-footer">
 
-									<p><?php _e("This is the 404.php template.", "bonestheme"); ?></p>
+									<p><?php _e("I can't believe I've done this.", "bonestheme"); ?></p>
 
 							</footer> <!-- end article footer -->
 

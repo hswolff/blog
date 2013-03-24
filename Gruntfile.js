@@ -73,28 +73,24 @@ module.exports = function(grunt) {
 
         // deploy via rsync
         rsync: {
-            staging: {
-                src: "./",
-                dest: "~/path/to/theme",
-                host: "user@host.com",
+            options: {
+                // dryRyn: true,  // un-comment to test rsync
                 recursive: true,
-                syncDest: true,
-                exclude: ['.git*', 'node_modules', '.sass-cache', 'Gruntfile.js', 'package.json', '.DS_Store', 'README.md', 'config.rb']
+                syncDest: false,
+                exclude: ['.git*', 'node_modules', '.sass-cache',
+                        'Gruntfile.js', 'package.json', '.DS_Store',
+                        'README.md', 'config.rb']
             },
-            production: {
-                src: "./",
-                dest: "~/path/to/theme",
-                host: "user@host.com",
-                recursive: true,
-                syncDest: true,
-                exclude: '<%= rsync.staging.exclude %>'
-            }
+            production: {} // loaded externally
         }
 
     });
+    var newProps = grunt.util._.defaults( require('./config-rsync-prod'), grunt.config('rsync.options') );
+    grunt.config('rsync.production', newProps );
 
     grunt.registerTask('dist', [
-        'compass:dist'
+        'compass:dist',
+        'rsync:production'
     ]);
 
     // register task

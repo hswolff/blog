@@ -4,8 +4,10 @@ wp-content/themes/harrywolff_2/library/css/*
 
 wp-content/plugins
 node_modules
-/config-local.php
-/config-prod.php
+/config-*.php
+!/config-*-sample.php
+/config-*.js
+!/config-*-sample.js
 
 # .gitignore from WordPress-Skeleton
 /shared

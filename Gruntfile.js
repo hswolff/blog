@@ -85,8 +85,9 @@ module.exports = function(grunt) {
         }
 
     });
-    var newProps = grunt.util._.defaults( require('./config-rsync-prod'), grunt.config('rsync.options') );
-    grunt.config('rsync.production', newProps );
+    var rsyncProduction = require('./config-rsync-prod');
+    rsyncProduction = grunt.util._.defaults( rsyncProduction, grunt.config('rsync.options') );
+    grunt.config('rsync.production', rsyncProduction );
 
     grunt.registerTask('dist', [
         'compass:dist',

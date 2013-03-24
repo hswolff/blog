@@ -12,25 +12,6 @@ module.exports = function(grunt) {
             assets: '<%= theme.root %>/library'
         },
 
-        // uglify to concat, minify, and make source maps
-        // uglify: {
-        //     dist: {
-        //         options: {
-        //             sourceMap: 'assets/js/map/source-map.js'
-        //         },
-        //         files: {
-        //             'assets/js/plugins.min.js': [
-        //                 'assets/js/source/plugins.js',
-        //                 'assets/js/vendor/**/*.js',
-        //                 '!assets/js/vendor/modernizr*.js'
-        //             ],
-        //             'assets/js/main.min.js': [
-        //                 'assets/js/source/main.js'
-        //             ]
-        //         }
-        //     }
-        // },
-
         // compass and scss
         compass: {
             options: {

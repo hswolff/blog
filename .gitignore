@@ -1,8 +1,8 @@
 # theme ignores
-content/themes/harrywolff_2/library/css/*
-!content/themes/harrywolff_2/library/css/.gitignore
+wp-content/themes/harrywolff_2/library/css/*
+!wp-content/themes/harrywolff_2/library/css/.gitignore
 
-content/plugins
+wp-content/plugins
 node_modules
 /config-local.php
 /config-prod.php
@@ -12,7 +12,7 @@ node_modules
 /local-config.php
 /sql-dump-*.sql
 /db-sync
-/content/upgrade/
+/wp-content/upgrade/
 .DS_Store
 
 # .gitignore from HTML5-boilerplate

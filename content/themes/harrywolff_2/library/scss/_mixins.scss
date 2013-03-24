@@ -48,7 +48,8 @@ TOOLS
 LAYOUT
 *********************/
 @mixin layout-max-width() {
-	max-width: 586px;
+	// max-width: 586px;
+	padding: 0 24%;
 }
 
 
@@ -72,7 +73,10 @@ $bones-blue:        #1990db;
 $link-color:        $bones-blue;
 $link-hover:        darken($link-color, 9%);
 
-$nav-border-color: #ccc;
+$nav-border-color: #ADADAD;
+
+$alternatingEvenColor: #F7F7F7;
+$alternatingEvenBorderColor: #CECECE;
 
 /*
 Here's a great tutorial on how to

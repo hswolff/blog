@@ -20,6 +20,7 @@ body {
 	font-size: 120%;
 	line-height: 1.5;
 	color: #565656;
+	background-image: url(../images/background-images/linedpaper.png);
 }
 
 /********************
@@ -250,16 +251,23 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin: 2.2em 0;
+	margin: 0;
 }
 
 		.hentry {
+			&:nth-child(odd) {
+				// background: #fff;
+			}
+			&:nth-child(even) {
+				// background: $alternatingEvenColor;
+				background-image: url(../images/background-images/shattered.png);
+				border-style: solid;
+				border-width: 1px 0;
+				border-color: $alternatingEvenBorderColor;
+			}
 			header {
 				h1 {
 					margin-bottom: 0;
-					&.single-title {
-						margin-top: 0;
-					}
 					&, a {
 						color: #000;
 					}
@@ -422,10 +430,13 @@ PAGE NAVI STYLES
 
 .page-navigation,
 .wp-prev-next {
-	margin: 1.1em 0 2.2em;
+	padding: 1.1em 0 2.2em;
+	background: $alternatingEvenColor;
+	border-top: 1px solid $alternatingEvenBorderColor;
 }
 	.bones_page_navi {
-
+		margin: 0;
+		padding: 1em 0;
 		li {
 			float: left;
 			margin-left: 10px;
@@ -831,10 +842,11 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background: #A3DAE0;
-	border-top: 1px solid #75A0A5;
-	color: #000111;
+	background: #232323;
+	border-top: 1px solid #444;
+	color: #ccc;
 	padding: 35px 0;
+	background-image: url(../images/background-images/escheresque_ste.png);
 }
 
 	/*

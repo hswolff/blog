@@ -28,7 +28,8 @@ LAYOUT & GRID STYLES
 }
 
 #logo,
-#inner-content,
+article,
+.page-navigation,
 #inner-footer {
 	@include layout-max-width();
 	margin-left: auto;

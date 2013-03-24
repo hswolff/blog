@@ -4,6 +4,8 @@ content/themes/harrywolff_2/library/css/*
 
 content/plugins
 node_modules
+/config-local.php
+/config-prod.php
 
 # .gitignore from WordPress-Skeleton
 /shared

@@ -48,7 +48,7 @@ TOOLS
 LAYOUT
 *********************/
 @mixin layout-max-width() {
-	max-width: 960px;
+	max-width: 586px;
 }
 
 
@@ -85,8 +85,8 @@ http://sachagreif.com/sass-color-variables/
 TYPOGRAPHY
 *********************/
 
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$sans-serif:        "Tahoma", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Baskerville", "Georgia", Cambria, Times New Roman, Times, serif;
 
 
 /* 	To embed your own fonts, use this syntax

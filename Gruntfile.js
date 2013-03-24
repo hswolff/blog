@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         theme: {
-            root: 'content/themes/harrywolff_2',
+            root: 'wp-content/themes/harrywolff_2',
             assets: '<%= theme.root %>/library'
         },
 

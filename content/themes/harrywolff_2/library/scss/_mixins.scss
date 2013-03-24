@@ -69,8 +69,8 @@ $white:             #fff;
 $bones-pink:        #f01d4f;
 $bones-blue:        #1990db;
 
-$link-color:        $bones-blue;
-$link-hover:        darken($link-color, 9%);
+$link-color:        darken($bones-blue, 9%);
+$link-hover:        lighten($link-color, 9%);
 
 $nav-border-color: #ADADAD;
 

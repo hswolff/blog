@@ -15,7 +15,16 @@ upon your base.scss styles.
 
 ******************************************************************/
 
-
+.header {
+	#logo {
+		margin-top: 1em;
+	}
+	.profile-picture {
+		right: 0;
+		top: 15px;
+		bottom: auto;
+	}
+}
 	
 /*********************
 NAVIGATION STYLES

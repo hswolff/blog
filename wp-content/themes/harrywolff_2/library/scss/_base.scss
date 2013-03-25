@@ -156,9 +156,31 @@ HEADER STYLES
 }
 
 	#logo {
+		margin-top: 0;
 		a {
 			color: #EEEEE0;
 		}
+		position: relative;
+		span {
+			font-size: 0.7em;
+		}
+		strong {
+			font-family: $google-cursive;
+			color: #000;
+		}
+	}
+
+	.profile-picture {
+		position: absolute;
+		right: 15px;
+		bottom: -10px;
+		img {
+			width: 85px;
+			border: 1px solid #DDD;
+			padding: 6px;
+		}
+		
+		
 	}
 
 /*********************
@@ -174,6 +196,7 @@ and more scalable.
 */
 
 .nav {
+	font-family: $sans-serif;
 	background: #eee;
 	border-width: 1px 0;
 	border-style: solid;
@@ -187,6 +210,9 @@ and more scalable.
 			padding: 10px 10px;
 			background-color: #eee;
 			border-bottom: 1px solid #ccc;
+			&:first-child {
+				padding-left: 0;
+			}
 
 			/*
 			remember this is for mobile ONLY, so there's no need

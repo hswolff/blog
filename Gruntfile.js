@@ -44,7 +44,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: '<%= theme.assets %>/js/**/*',
-                tasks: ['jshint', 'uglify', 'livereload']
+                tasks: ['livereload']
             },
             livereload: {
                 files: [

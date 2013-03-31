@@ -69,7 +69,6 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	// width: 96%;
 	margin: 0 auto;
 }
 
@@ -157,6 +156,8 @@ HEADER STYLES
 
 	#logo {
 		margin-top: 0;
+		margin-left: $mobileSidePadding;
+		margin-right: $mobileSidePadding;
 		a {
 			color: #EEEEE0;
 		}
@@ -289,6 +290,7 @@ POSTS & CONTENT STYLES
 				border-width: 1px 0;
 				border-color: $alternatingEvenBorderColor;
 			}
+			padding: 0 $mobileSidePadding;
 			header {
 				h1 {
 					margin-bottom: 0;

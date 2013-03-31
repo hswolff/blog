@@ -52,6 +52,15 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+#show-more-nav {
+	display: none;
+}
+
+.header .nav {
+	max-height: inherit;
+	overflow: visible;
+}
+
 .nav {
 
 	> ul {

@@ -67,7 +67,10 @@ jQuery(document).ready(function($) {
     
 	
 	// add all your scripts here
-	
+
+	$('#show-more-nav').on('click', function(e) {
+        $('.top-nav').toggleClass('show-all');
+    });
  
 }); /* end of as page load scripts */
 

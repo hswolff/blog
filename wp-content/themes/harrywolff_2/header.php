@@ -75,6 +75,7 @@
 
 
 					<nav role="navigation">
+						<div id="show-more-nav" class="image-replacement">More</div>
 						<?php bones_main_nav(); ?>
 					</nav>
 

@@ -152,6 +152,32 @@ HEADER STYLES
 
 .header {
 	background: #2B5A82;
+
+	nav {
+		position: relative;
+	}
+
+	.nav {
+		max-height: 50px;
+		overflow: hidden;
+		&.show-all {
+			max-height: inherit;
+			overflow: visible;
+		}
+	}
+
+	#show-more-nav {
+		$size: 32px;
+		background-image: url(../images/menu.png);
+		background-size: $size $size;
+		background-repeat: no-repeat;
+		width: $size;
+		height: $size;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		cursor: pointer;
+	}
 }
 
 	#logo {
@@ -267,6 +293,11 @@ and more scalable.
 		a {}
 
 	}  /* end current highlighters */
+
+	> ul {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 
 } /* end .nav */
 

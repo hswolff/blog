@@ -56,7 +56,7 @@
 
 		<!-- drop Google Analytics Here -->
 		<!-- end analytics -->
-		<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
 	</head>
 
 	<body <?php body_class(); ?>>

@@ -40,7 +40,7 @@ module.exports = function(grunt) {
         regarde: {
             compass: {
                 files: '<%= theme.assets %>/scss/**/*',
-                tasks: ['compass']
+                tasks: ['compass:dev']
             },
             js: {
                 files: '<%= theme.assets %>/js/**/*',

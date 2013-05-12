@@ -20,7 +20,7 @@ body {
 	font-size: 120%;
 	line-height: 1.5;
 	color: #565656;
-	background-image: url(../images/background-images/linedpaper.png);
+	background-color: $contentBackgroundColor;
 }
 
 #wpstats {
@@ -316,12 +316,8 @@ POSTS & CONTENT STYLES
 }
 
 		.hentry {
-			&:nth-child(odd) {
-				// background: #fff;
-			}
 			&:nth-child(even) {
-				// background: $alternatingEvenColor;
-				background-image: url(../images/background-images/shattered.png);
+				background-color: $alternatingContentBackgroundColor;
 				border-style: solid;
 				border-width: 1px 0;
 				border-color: $alternatingEvenBorderColor;
@@ -339,7 +335,12 @@ POSTS & CONTENT STYLES
 				}
 			}
 
-			footer {}
+			body.single-post & footer,
+			body.page & footer {
+				border-bottom: 1px solid #929292;
+				margin-top: 2em;
+				margin-bottom: 2em;
+			}
 
 
 		} /* end .hentry */

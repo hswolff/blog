@@ -162,7 +162,10 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+	text-align: left;
+	position: absolute;
+	top: 0;
+	right: 5%;
 }
 
 	.widgettitle {

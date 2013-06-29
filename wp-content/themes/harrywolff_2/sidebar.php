@@ -1,4 +1,5 @@
-				<div id="sidebar1" class="sidebar fourcol last clearfix" role="complementary">
+				<div id="sidebar1" class="sidebar twocol last clearfix" role="complementary">
+					<?php include 'ads.php'; ?>
 
 					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
 
@@ -6,9 +7,9 @@
 
 					<?php else : ?>
 
-						<!-- This content shows up if there are no widgets defined in the backend. -->
+						<?// This content shows up if there are no widgets defined in the backend. ?>
 
-						<div class="alert alert-help">
+						<div style="display:none;" class="alert alert-help">
 							<p><?php _e("Please activate some Widgets.", "bonestheme");  ?></p>
 						</div>
 

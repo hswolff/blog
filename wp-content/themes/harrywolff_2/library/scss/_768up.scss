@@ -80,7 +80,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				background-color: #dedede;
+				background-color: $nav-hover-color;
 
 			}
 		}

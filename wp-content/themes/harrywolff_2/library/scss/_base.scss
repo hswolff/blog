@@ -228,7 +228,7 @@ and more scalable.
 
 .nav {
 	font-family: $sans-serif;
-	background: #eee;
+	background: $nav-background-color;
 	border-width: 1px 0;
 	border-style: solid;
 	border-color: $nav-border-color;
@@ -239,7 +239,7 @@ and more scalable.
 			display: block;
 			text-decoration: none;
 			padding: 10px 10px;
-			background-color: #eee;
+			background-color: $nav-background-color;
 			border-bottom: 1px solid #ccc;
 
 			/*
@@ -908,12 +908,9 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background: #232323;
-	border-top: 1px solid #444;
-	color: #ccc;
 	padding: 35px 0;
-	background-image: url(../images/background-images/escheresque_ste.png);
 	margin-top: 1em;
+	text-align: center;
 }
 
 	/*
@@ -937,4 +934,10 @@ FOOTER STYLES
 
 
 	.copyright {}
+
+	.footer-poem {
+		font-style: italic;
+		white-space: pre-line;
+		font-family: Times New Roman, serif;
+	}
 

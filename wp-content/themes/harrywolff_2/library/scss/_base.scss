@@ -316,10 +316,9 @@ POSTS & CONTENT STYLES
 
 		.hentry {
 			&:nth-child(even) {
-				background-color: $alternatingContentBackgroundColor;
-				border-style: solid;
-				border-width: 1px 0;
-				border-color: $alternatingEvenBorderColor;
+				border-style: ridge;
+				border-width: 10px 0;
+				border-color: $article-border-color;
 			}
 			padding: 0 $mobileSidePadding;
 			header {

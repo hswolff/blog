@@ -355,7 +355,13 @@ POSTS & CONTENT STYLES
 
 		.page-title {}
 
-		.archive-title { }
+		.archive-title {
+			font-size: 2em;
+			border-color: #999;
+			border-style: ridge;
+			border-width: 0 0 10px;
+			padding: 20px 0;
+		}
 
 		/* want to style individual post classes? Booya! */
 		.post-id {}         /* post by id (i.e. post-3) */

@@ -315,9 +315,9 @@ POSTS & CONTENT STYLES
 }
 
 		.hentry {
-			&:nth-child(even) {
+			& + .hentry {
 				border-style: ridge;
-				border-width: 10px 0;
+				border-width: 10px 0 0;
 				border-color: $article-border-color;
 			}
 			padding: 0 $mobileSidePadding;

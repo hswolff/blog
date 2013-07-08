@@ -69,7 +69,7 @@
 
 					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
 					<p id="logo" class="h1">
-						<a href="<?php echo home_url(); ?>" rel="nofollow"><span>Hello. My name is</span><br/><strong>Harry Wolff</strong></a>
+						<a href="<?php echo home_url(); ?>" rel="nofollow" class="text"><span>Hello. My name is</span><br/><strong>Harry Wolff</strong></a>
 						<a href="/about" class="profile-picture"><img src="<?php echo get_template_directory_uri(); ?>/library/images/profile.jpg" alt="Profile Picture"/></a>
 					</p>
 

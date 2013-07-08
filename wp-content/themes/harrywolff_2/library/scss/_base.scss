@@ -203,6 +203,11 @@ HEADER STYLES
 		}
 	}
 
+	.text {
+		z-index: 2;
+		position: relative;
+	}
+
 	.profile-picture {
 		position: absolute;
 		right: 15px;

@@ -321,8 +321,8 @@ POSTS & CONTENT STYLES
 
 		.hentry {
 			& + .hentry {
-				border-style: ridge;
-				border-width: 10px 0 0;
+				border-style: solid;
+				border-width: 1px 0 0;
 				border-color: $article-border-color;
 			}
 			padding: 0 $mobileSidePadding;

@@ -1,0 +1,74 @@
+/*
+Theme Name: HarryWolff.com 3.0
+Theme URI: http://harrywolff.com/
+Author: Harry Wolff
+Author URI: http://harrywolff.com/
+Template: twentythirteen
+Version: 3.0
+*/
+@import url('../twentythirteen/style.css');
+
+#masthead {
+	background: #2B5A82;
+}
+
+
+#masthead .home-link {
+	position: relative;
+	max-width: 686px;
+}
+
+#masthead h1:hover {
+	text-decoration: none;
+}
+
+#masthead h2 {
+	color: #EEEEE0;
+	font-style: normal;
+	font-family: "Tahoma","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+	font-size: 28px;
+	padding: 40px 0 0 0;
+}
+
+#masthead h1 {
+	font-family: "Rock Salt",cursive;
+	color: #000;
+	padding: 18px 0 10px;
+}
+
+#masthead .profile-picture {
+	width: 125px;
+	border: 1px solid #B4BEBB;
+	padding: 6px;
+
+	position: absolute;
+	right: 0;
+	top: 16%;
+}
+
+@media (max-width: 643px) {
+	#masthead .profile-picture {
+		width: 100px;
+	}
+}
+
+
+/**
+ * Nav bar styles
+ */
+
+#masthead .main-navigation {
+	max-width: 686px;
+	margin-top: -2px;
+}
+
+#masthead .navbar {
+	background: #D8DADA;
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: #ADADAD;
+	-webkit-box-shadow: 0px 0px 4px #ADADAD;
+	-moz-box-shadow: 0px 0px 4px #adadad;
+	box-shadow: 0px 0px 4px #ADADAD;
+}

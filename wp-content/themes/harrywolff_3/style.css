@@ -72,3 +72,9 @@ Version: 3.0
 	-moz-box-shadow: 0px 0px 4px #adadad;
 	box-shadow: 0px 0px 4px #ADADAD;
 }
+
+
+#disqus_thread {
+	max-width: 604px;
+	margin: 0 auto;
+}

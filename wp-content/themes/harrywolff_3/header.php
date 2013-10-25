@@ -52,3 +52,4 @@
 		</header><!-- #masthead -->
 
 		<div id="main" class="site-main">
+			<?php include 'ads.php'; ?>

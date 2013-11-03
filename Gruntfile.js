@@ -90,7 +90,7 @@ module.exports = function(grunt) {
     grunt.config('rsync.production', rsyncProduction );
 
     grunt.registerTask('dist', [
-        'compass:dist',
+        // 'compass:dist',
         'rsync:production'
     ]);
 

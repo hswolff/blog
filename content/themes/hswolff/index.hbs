@@ -6,7 +6,7 @@
 {{! The big featured header on the homepage, with the site logo and description }}
 <header class="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
     <div class="vertical">
-        <div class="site-head-content" class="inner">
+        <div class="site-head-content inner">
 
             {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
             <h1 class="blog-title">{{@blog.title}}</h1>
@@ -22,6 +22,12 @@
     {{#foreach posts}}
 
     <article class="{{post_class}}">
+        {{#if @first}}
+            <div id="ad">
+                <div id="bsap_1288158" class="bsarocks bsap_00db530396a6b2a2b9d7b45a9e7cd3c2"></div>
+                <a href="http://adpacks.com" id="bsap_aplink">via Ad Packs</a>
+            </div>
+        {{/if}}
         <header class="post-header">
             <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>

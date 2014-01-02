@@ -9,7 +9,7 @@
 
         {{! Each post has the blog logo at the top, with a link back to the home page }}
         <header class="post-header">
-            <a id="blog-logo" href="{{@blog.url}}">
+            <a class="blog-logo" href="{{@blog.url}}">
                 {{#if @blog.logo}}
                     <img src="{{@blog.logo}}" alt="Blog Logo" />
                 {{else}}
@@ -18,11 +18,16 @@
             </a>
         </header>
 
+        <div id="ad">
+            <div id="bsap_1288158" class="bsarocks bsap_00db530396a6b2a2b9d7b45a9e7cd3c2"></div>
+            <a href="http://adpacks.com" id="bsap_aplink">via Ad Packs</a>
+        </div>
+
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
         {{! Everything below outputs content of the the post which has been published }}
-        
+
 
         <h1 class="post-title">{{{title}}}</h1>
 

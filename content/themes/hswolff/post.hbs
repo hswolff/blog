@@ -9,7 +9,7 @@
 
         {{! Each post has the blog logo at the top, with a link back to the home page }}
         <header class="post-header">
-            <a id="blog-logo" href="{{@blog.url}}">
+            <a class="blog-logo" href="{{@blog.url}}">
                 {{#if @blog.logo}}
                     <img src="{{@blog.logo}}" alt="Blog Logo" />
                 {{else}}
@@ -17,6 +17,11 @@
                 {{/if}}
             </a>
         </header>
+
+        <div id="ad">
+            <div id="bsap_1288158" class="bsarocks bsap_00db530396a6b2a2b9d7b45a9e7cd3c2"></div>
+            <a href="http://adpacks.com" id="bsap_aplink">via Ad Packs</a>
+        </div>
 
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
@@ -56,6 +61,27 @@
             </section>
 
         </footer>
+
+        <section class="comment-content">
+            <hr/>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var l = window.location;
+                var disqus_shortname = 'harrywolff';
+                var disqus_url = l.protocol + '//' + l.host + '/{{slug}}/';
+                var disqus_identifier = '{{slug}}';
+                var disqus_title = '{{title}}';
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
 
         {{/post}}
 

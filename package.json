@@ -1,0 +1,21 @@
+{
+    "name"        : "blog.harrywolff.com",
+    "version"     : "1.0.0",
+    "description" : "Harry blogs.",
+    "author"      : "Harry Wolff",
+    "homepage"    : "http://blog.harrywolff.com",
+    "scripts": {
+        "start": "node index"
+    },
+    "engines": {
+        "node": "~0.10.0"
+    },
+    "engineStrict": true,
+    "dependencies": {
+        "ghost": "git://github.com/hswolff/Ghost.git#prod"
+    },
+    "optionalDependencies": {
+    },
+    "devDependencies": {
+    }
+}

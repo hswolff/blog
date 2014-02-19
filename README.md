@@ -13,7 +13,7 @@ We're ghostbusters over here.  We're running with [Ghost](http://ghost.org/).
 
 ## Running Application
 
-`GHOST_CONFIG="$(pwd)/config.js" NODE_ENV=production node index.js`
+`NODE_ENV=production node index.js`
 
 ## Backup
 

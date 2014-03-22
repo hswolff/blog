@@ -1,0 +1,9 @@
+{
+    "name"        : "ghost-app-read-time",
+    "version"     : "0.1.0",
+    "description" : "Ghost app for adding read time to post.",
+    "dependencies": {
+        "ghost-app": "0.0.2",
+        "read-time": "1.0.0"
+    }
+}

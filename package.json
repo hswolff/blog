@@ -12,7 +12,7 @@
     },
     "engineStrict": true,
     "dependencies": {
-        "ghost": "git://github.com/hswolff/Ghost.git#prod"
+        "ghost": "0.4.2-rc1"
     },
     "optionalDependencies": {
     },

@@ -12,7 +12,7 @@
     },
     "engineStrict": true,
     "dependencies": {
-        "ghost": "0.4.2-rc1"
+        "ghost": "0.4.2"
     },
     "optionalDependencies": {
     },

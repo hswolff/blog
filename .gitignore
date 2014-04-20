@@ -1,3 +1,5 @@
 node_modules
 content
 !content/themes/hswolff
+config.js
+scripts

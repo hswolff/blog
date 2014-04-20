@@ -10,11 +10,12 @@
     3.  Utilities
     4.  General
     5.  Single Post
-    6.  Third Party Elements
-    7.  Pagination
-    8.  Footer
-    9.  Media Queries (Tablet)
-    10. Media Queries (Mobile)
+    6.  Tag Archive
+    7.  Third Party Elements
+    8.  Pagination
+    9.  Footer
+    10.  Media Queries (Tablet)
+    11. Media Queries (Mobile)
 
  */
 
@@ -81,7 +82,7 @@ input[type="reset"], input[type="submit"] {
    cursor: pointer;
 }
 button[disabled], html input[disabled] { cursor: default; }
-input[type="checkbox"], 
+input[type="checkbox"],
 input[type="radio"] { box-sizing: border-box; padding: 0; }
 input[type="search"] {
    -webkit-appearance: textfield;
@@ -114,10 +115,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 
 /* Apply these base styles to all icons */
-.icon-ghost:before, 
-.icon-feed:before, 
-.icon-twitter:before, 
-.icon-google-plus:before, 
+.icon-ghost:before,
+.icon-feed:before,
+.icon-twitter:before,
+.icon-google-plus:before,
 .icon-facebook:before {
     font-family: 'icons';
     speak: none;
@@ -126,11 +127,12 @@ table { border-collapse: collapse; border-spacing: 0; }
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
     text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Each icon is created by inserting the corret character into the 
+/* Each icon is created by inserting the corret character into the
    content of the :before pseudo element. Like a boss. */
 .icon-ghost:before {
     content: "\e000";
@@ -346,8 +348,8 @@ kbd {
     font-weight: bold;
     background: #f4f4f4;
     border-radius: 4px;
-    box-shadow: 
-        0 1px 0 rgba(0, 0, 0, 0.2), 
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.2),
         0 1px 0 0 #fff inset;
 }
 
@@ -524,16 +526,22 @@ margin on the iframe, cause it breaks stuff. */
 
 .post-title {
     margin:0;
+    color: #222;
 }
 
 .post-title a {
     text-decoration: none;
+    color: #222;
 }
 
 .post-excerpt p {
     margin: 1.6rem 0 0 0;
     font-size: 0.9em;
     line-height: 1.6em;
+}
+
+.read-more {
+    text-decoration: none;
 }
 
 .post-meta {
@@ -600,7 +608,7 @@ margin on the iframe, cause it breaks stuff. */
    5. Single Post - When you click on an individual post
    ========================================================================== */
 
-/* Stop .full-img from creating horizontal scroll - slight hack due to 
+/* Stop .full-img from creating horizontal scroll - slight hack due to
    imperfections with browser width % calculations and rounding */
 .post-template .content {
     overflow: hidden;
@@ -643,7 +651,7 @@ margin on the iframe, cause it breaks stuff. */
 .post-content .full-img {
     width: 126%;
     max-width: none;
-    margin: 0 -13%;    
+    margin: 0 -13%;
 }
 
 /* The author credit area after the post */
@@ -730,7 +738,39 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   6. Third Party Elements - Embeds from other services
+   6. Tag archive
+   ========================================================================== */
+
+.tag-archive-header {
+    position: relative;
+    max-width: 700px;
+    margin: 4rem auto;
+    border-bottom: 1px solid #EBF2F6;
+    padding: 20px 0;
+    text-align: center;
+    color: #222;
+}
+
+.tag-archive-header:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #fff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #fff 0 0 0 5px;
+}
+
+
+/* ==========================================================================
+   7. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -747,7 +787,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   7. Pagination - Tools to let you flick between pages
+   8. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -798,7 +838,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   8. Footer - The bottom of every page
+   9. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -915,7 +955,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   9. Media Queries - Smaller than 900px
+   10. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -925,9 +965,9 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .site-head {
-        -webkit-box-sizing: border-box; 
+        -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
-        box-sizing: border-box; 
+        box-sizing: border-box;
         height: auto;
         min-height: 240px;
         padding: 15% 0;
@@ -976,7 +1016,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* ==========================================================================
-   10. Media Queries - Smaller than 500px
+   11. Media Queries - Smaller than 500px
    ========================================================================== */
 
 
@@ -986,7 +1026,7 @@ margin on the iframe, cause it breaks stuff. */
         max-height: 80px;
     }
 
-    .inner, 
+    .inner,
     .pagination {
         width: auto;
         margin-left: 16px;
@@ -1030,17 +1070,22 @@ margin on the iframe, cause it breaks stuff. */
 
     .post-template .post {
         padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     .post-template .post-header {
         padding: 30px 0;
     }
 
+    .post-template .site-footer {
+        margin-top: 0;
+    }
+
     .post-content img {
         padding: 0;
     }
 
-    .post-content .full-img { 
+    .post-content .full-img {
         width: auto;
         width: calc(100% + 32px); /* expand with to image + margins */
         margin: 0 -16px; /* get rid of margins */
@@ -1070,6 +1115,16 @@ margin on the iframe, cause it breaks stuff. */
 
     .post-footer .share a {
         margin: 1.4rem 0.8rem 0 0.8rem;
+    }
+
+    .author-meta li {
+        float: none;
+        margin: 0;
+        line-height: 1.6em;
+    }
+
+    .author-meta li:before {
+        display: none;
     }
 
     .older-posts,

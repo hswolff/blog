@@ -46,7 +46,12 @@ body #ad {
     Header styles
  */
 
-.home-template .blog-title {
+.main-header {
+    height: 55%;
+    min-height: 180px;
+}
+
+.home-template .page-title {
     color: #444;
 }
 

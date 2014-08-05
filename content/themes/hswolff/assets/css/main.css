@@ -51,8 +51,12 @@ body #ad {
     min-height: 180px;
 }
 
-.home-template .page-title {
+.page-title {
     color: #444;
+}
+
+.page-description {
+    color: rgba(68, 68, 68, 0.8);
 }
 
 .blog-logo img {
@@ -66,4 +70,15 @@ body #ad {
 
 .post-content {
     position: relative;
+}
+
+.post-meta > span {
+    display: inline-block;
+}
+
+.post-date {
+    display: inline;
+    border-right: #D5DBDE 1px solid;
+    margin-right: 8px;
+    padding-right: 12px;
 }

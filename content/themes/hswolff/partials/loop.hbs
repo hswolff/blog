@@ -1,0 +1,29 @@
+{{! Previous/next page links - only displayed on page 2+ }}
+<div class="extra-pagination inner">
+    {{pagination}}
+</div>
+
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}
+<article class="{{post_class}}">
+    {{#if @first}}
+        <div id="ad">
+            {{> ads-script}}
+        </div>
+    {{/if}}
+    <header class="post-header">
+        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>{{excerpt words="30"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        <span>{{tags}}</span>
+        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+        <span class="read-time">Read time: {{readTime markdown}}</span>
+    </footer>
+</article>
+{{/foreach}}
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}

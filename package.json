@@ -5,14 +5,15 @@
     "author"      : "Harry Wolff",
     "homepage"    : "http://blog.harrywolff.com",
     "scripts": {
-        "start": "nodemon index.js"
+        "start": "nodemon index.js",
+        "start-prod": "NODE_ENV=production node index.js"
     },
     "engines": {
         "node": "~0.10.0"
     },
     "engineStrict": true,
     "dependencies": {
-        "ghost": "0.5.2"
+        "ghost": "0.5.3"
     },
     "optionalDependencies": {
     },

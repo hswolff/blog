@@ -8,7 +8,6 @@ plugin.templates = require('metalsmith-templates');
 plugin.markdown = require('metalsmith-markdown');
 plugin.permalinks = require('metalsmith-permalinks');
 plugin.tags = require('metalsmith-tags');
-plugin.serve = require('metalsmith-serve');
 plugin.watch = require('metalsmith-watch');
 plugin.collections = require('metalsmith-collections');
 plugin.pagination = require('metalsmith-pagination');
@@ -192,25 +191,24 @@ gulp.task('build', function(cb) {
 });
 
 gulp.task('serve', function(cb) {
-  metalsmith(__dirname)
-    .use(plugin.serve({
-      port: 8080,
-      verbose: false
-    }))
-    .build(cb);
+  require('http-server').createServer({
+    showDir: true,
+    autoIndex: true,
+    root: 'build'
+  }).listen(8080, cb);
 });
 
 gulp.task('watch', ['serve'], function(cb) {
   createMetalsmith()
     .use(plugin.watch({
-      pattern : '**/*.md',
+      pattern : '**/*',
       livereload: true
     }))
     .build(cb);
 });
 
 // Allow for building as a node script and without gulp.
-if (process.argv[0] !== 'node') {
+if (process.argv[1].match(/gulp$/) === null) {
   createMetalsmith()
     .build(function (err) {
       if (err) {

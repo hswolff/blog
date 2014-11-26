@@ -112,7 +112,8 @@ function createMetalsmith() {
       },
       url: {
         gravatar: 'http://www.gravatar.com/avatar/f863e9eb811851834773398e72614dc1?d=404'
-      }
+      },
+      disqus_url: 'blog.harrywolff.com'
     })
     .use(plugin.uglify({
       concat: 'assets/js/scripts.js'

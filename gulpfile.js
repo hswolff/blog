@@ -1,5 +1,7 @@
 // process.env.DEBUG = '*';
 var gulp = require('gulp');
+var swig = require('swig');
+var createPost = require('./create-post');
 
 var metalsmith = require('metalsmith');
 var plugin = {};
@@ -21,8 +23,6 @@ plugin.less = require('metalsmith-less');
 plugin.cleanCss = require('metalsmith-clean-css');
 plugin.fingerprint = require('metalsmith-fingerprint');
 plugin.wordCount = require('metalsmith-word-count');
-
-var swig = require('swig');
 
 /**
  * Add filter to output the absolute url for a given path and base path.
@@ -63,6 +63,7 @@ swig.setFilter('pagination_total', function (pagination) {
 function debug(files, metalsmith, done) {
   // console.log(files['index.html'].pagination.files[0]);
   // console.log(files['tag/code/index.html'].pagination.pages);
+  // console.log(files);
   // console.log(Object.keys(files));
   // console.log(metalsmith.metadata());
   // console.log(Object.keys(metalsmith.metadata()));
@@ -206,6 +207,12 @@ gulp.task('watch', ['serve'], function(cb) {
       livereload: true
     }))
     .build(cb);
+});
+
+gulp.task('new', function(cb) {
+  createPost.promptForParams(function(params) {
+    createPost.writeNewFile(params, cb);
+  });
 });
 
 // Allow for building as a node script and without gulp.

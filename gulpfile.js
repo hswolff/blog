@@ -203,7 +203,7 @@ gulp.task('serve', function(cb) {
 gulp.task('watch', ['serve'], function(cb) {
   createMetalsmith()
     .use(plugin.watch({
-      pattern : '**/*',
+      pattern : '**/*.md',
       livereload: true
     }))
     .build(cb);

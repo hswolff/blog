@@ -209,6 +209,12 @@ gulp.task('watch', ['serve'], function(cb) {
     .build(cb);
 });
 
+gulp.task('date', function(cb) {
+  var time = new Date();
+  console.log('Time now:\n' + time.toISOString());
+  cb();
+});
+
 gulp.task('new', function(cb) {
   createPost.promptForParams(function(params) {
     createPost.writeNewFile(params, cb);

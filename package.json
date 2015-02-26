@@ -18,7 +18,7 @@
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-pagination": "^1.0.0",
     "metalsmith-permalinks": "^0.4.0",
-    "metalsmith-tags": "git://github.com/totocaster/metalsmith-tags.git#febf898d4e69d15dc4a970a78b6438b4f96bc68a",
+    "metalsmith-tags": "0.8.0",
     "metalsmith-templates": "^0.6.0",
     "metalsmith-uglify": "1.0.1",
     "metalsmith-watch": "^0.2.0",

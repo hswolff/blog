@@ -18,6 +18,7 @@ plugin.branch = require('metalsmith-branch');
 plugin.excerpts = require('metalsmith-excerpts');
 plugin.feed = require('metalsmith-feed');
 plugin.htmlMinifier = require('metalsmith-html-minifier');
+plugin.concat = require('metalsmith-concat');
 plugin.uglify = require('metalsmith-uglify');
 plugin.less = require('metalsmith-less');
 plugin.cleanCss = require('metalsmith-clean-css');
@@ -116,9 +117,11 @@ function createMetalsmith() {
       },
       disqus_url: 'blog.harrywolff.com'
     })
-    .use(plugin.uglify({
-      concat: 'assets/js/scripts.js'
+    .use(plugin.concat({
+      files: 'assets/js/*.js',
+      output: 'assets/js/scripts.js'
     }))
+    .use(plugin.uglify())
     .use(plugin.less({
       pattern: 'assets/css/main.less',
       parse: {

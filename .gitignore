@@ -2,5 +2,6 @@ node_modules
 build
 drafts
 src/posts
+src/pages
 src/assets/images/posts
 sync.sh

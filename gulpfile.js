@@ -149,7 +149,7 @@ function createMetalsmith() {
     .use(plugin.collections({
       posts: {
         pattern: 'posts/**/*',
-        sortBy: 'date_published',
+        sortBy: 'date',
         reverse: true
       }
     }))
@@ -167,7 +167,7 @@ function createMetalsmith() {
       path: 'tag/:tag/index.html',
       pathPage: 'tag/:tag/:num/index.html',
       perPage: 6,
-      sortBy: 'date_published',
+      sortBy: 'date',
       reverse: true
     }))
     .use(plugin.permalinks({

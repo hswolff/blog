@@ -16,7 +16,7 @@
         <a href="/tag/{{tag}}/">{{tag}}</a>{% if !loop.last%},{% endif %}
       {% endfor%}</span>
 
-      <time class="post-date" datetime="{{post.date_published | date('j F Y')}}">{{post.date_published | date('j F Y')}}</time>
+      <time class="post-date" datetime="{{post.date | date('j F Y')}}">{{post.date | date('j F Y')}}</time>
 
       <span class="read-time">Read time: {{post.readingTime}}</span>
     </footer>

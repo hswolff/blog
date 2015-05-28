@@ -96,7 +96,7 @@ function unindentAssets(files, metalsmith, done) {
 function createMetalsmith() {
   return metalsmith(__dirname)
     .source('src')
-    .destination('build')
+    .destination('dist')
     .clean(true)
     .use(plugin.ignore([
         '.DS_Store',

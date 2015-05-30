@@ -124,7 +124,7 @@ function createMetalsmith() {
     .use(plugin.uglify())
     .use(plugin.less({
       pattern: 'assets/css/main.less',
-      parse: {
+      render: {
         paths: 'src/assets/css/'
       }
     }))

@@ -199,7 +199,7 @@ gulp.task('serve', function(cb) {
   require('http-server').createServer({
     showDir: true,
     autoIndex: true,
-    root: 'build'
+    root: 'dist'
   }).listen(8080, cb);
 });
 

@@ -24,6 +24,7 @@ plugin.less = require('metalsmith-less');
 plugin.cleanCss = require('metalsmith-clean-css');
 plugin.fingerprint = require('metalsmith-fingerprint');
 plugin.wordCount = require('metalsmith-word-count');
+plugin.writemetadata = require('metalsmith-writemetadata');
 
 /**
  * Add filter to output the absolute url for a given path and base path.
@@ -185,6 +186,42 @@ function createMetalsmith() {
       limit: 15,
       destination: 'rss.xml'
     }))
+    .use(plugin.writemetadata({
+      collections: {
+        posts: {
+          output: {
+            path: 'json/posts.json',
+            asObject: true,
+            metadata: {
+            }
+          },
+          ignorekeys: [
+            'stats',
+            'mode',
+            'contents',
+            'next',
+            'previous'
+          ]
+        }
+      }
+    }))
+    /**
+     * Limit the posts.json to just first 20 posts.
+     */
+    .use(function(files, metalsmith, done) {
+      var jsonFilePath = 'json/posts.json';
+
+      var jsonDoc = JSON.parse(files[jsonFilePath].contents.toString());
+      var totalItems = 20;
+      jsonDoc.result = jsonDoc.result.splice(0, totalItems);
+      jsonDoc.total = totalItems;
+
+      files[jsonFilePath] = {
+        contents: new Buffer(JSON.stringify(jsonDoc))
+      };
+
+      done();
+    })
     .use(debug);
 }
 

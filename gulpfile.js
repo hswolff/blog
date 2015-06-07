@@ -172,7 +172,7 @@ function createMetalsmith() {
       reverse: true
     }))
     .use(plugin.permalinks({
-      pattern: ':title'
+      pattern: ':slug'
     }))
     .use(plugin.templates({
       default: 'post.html',

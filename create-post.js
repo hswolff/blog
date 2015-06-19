@@ -99,7 +99,7 @@ exports.writeNewFile = function(params, cb) {
   var output = template({
       title: params.title,
       slug: titleAsSlug,
-      tags: params.tags,
+      tags: params.tags.split(', '),
       date_published: postDateString,
       date_updated: postDateString,
       draft: params.draft

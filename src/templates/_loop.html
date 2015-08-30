@@ -13,7 +13,7 @@
   </section>
     <footer class="post-meta">
       <span>{% for tag in post.tags %}
-        <a href="/tag/{{tag}}/">{{tag}}</a>{% if !loop.last%},{% endif %}
+        <a href="/tag/{{post.tagsUrlSafe[loop.index0]}}/">{{tag}}</a>{% if !loop.last%},{% endif %}
       {% endfor%}</span>
 
       <time class="post-date" datetime="{{post.date | date('j F Y')}}">{{post.date | date('j F Y')}}</time>

@@ -1,0 +1,11 @@
+{
+  "name": "my-theme",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Harry Wolff <hello@hswolff.com> (http://hswolff.com/)",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

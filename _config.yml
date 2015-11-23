@@ -1,0 +1,25 @@
+# Site settings
+site:
+  title: Harry Wolff
+  author: Harry Wolff
+  email: hello@hswolff.com
+  description: Personal blog of Harry Wolff (hswolff).
+  url: "http://blog.hswolff.com/"
+  gravatar_url: 'http://www.gravatar.com/avatar/f863e9eb811851834773398e72614dc1?d=404'
+  disqus_url: blog.harrywolff.com
+
+file:
+  url_key: slug
+
+collections:
+  favicon:
+    path: favicon.ico
+    static: true
+
+clean_destination: false
+
+plugins:
+  html-minifier:
+    enabled: false
+  excerpt:
+    enabled: true

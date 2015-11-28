@@ -20,6 +20,6 @@ clean_destination: false
 
 plugins:
   html-minifier:
-    enabled: false
+    enabled: true
   excerpt:
     enabled: true

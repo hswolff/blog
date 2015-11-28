@@ -1,7 +1,5 @@
 node_modules
-dist
-drafts
-src/posts
-src/pages
-src/assets/images/posts
+_site
+_posts
+images/posts
 sync.sh

@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <title>{% block head_title %}{{title}}{% endblock %}</title>
-  <meta name="description" content="{{description}}">
+  <title>{% block head_title %}{{site.title}}{% endblock %}</title>
+  <meta name="description" content="{{site.description}}">
   <meta name="keywords" content="javascript, frontend, code, tutorial, review, technology, writing, blog, personal, music" />
 
   <meta name="HandheldFriendly" content="True" />
@@ -14,18 +14,18 @@
   <script type="text/javascript">var _sf_startpt=(new Date()).getTime();</script>
   <link rel="shortcut icon" href="/favicon.ico">
 
-  <link rel="stylesheet" type="text/css" href="/{{fingerprint['css/main.css']}}" />
+  <link rel="stylesheet" type="text/css" href="{{theme.css}}" />
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
   <link rel="alternate" type="application/rss+xml" title="Harry Wolff" href="http://feeds.feedburner.com/harrywolff/zOZJ" />
-  <link rel="canonical" href="{{path | absolute_url(site.url)}}" />
+  <link rel="canonical" href="{{file.url | absolute_url(site.url) if file.url else pagination.url | absolute_url(site.url)}}" />
   {% if pagination.next %}
-  <link rel="next" href="{{pagination.next.path | absolute_url(site.url)}}" />
+  <link rel="next" href="{{pagination.next_link | absolute_url(site.url)}}" />
   {% endif %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
 
-  {% if date %}
+  {% if file.date %}
     <header class="main-header post-head no-cover">
       <nav class="main-nav clearfix">
         <a class="back-button icon-arrow-left" href="/">Home</a>
@@ -34,9 +34,9 @@
       </nav>
     </header>
   {% else %}
-    <header class="main-header {% if tag %}tag-head{% endif %}" style="background-image: url(/images/background-top.jpg)">
+    <header class="main-header {% if pagination.metadata %}tag-head{% endif %}" style="background-image: url(/images/background-top.jpg)">
       <nav class="main-nav overlay clearfix">
-        {% if tag %}
+        {% if pagination.metadata %}
           <a class="back-button icon-arrow-left" href="/">Home</a>
         {% else %}
           <a class="blog-logo" href="/"><img src="/images/profile.jpg" alt="Blog Logo" /></a>
@@ -53,7 +53,7 @@
   {% endif%}
 
   <main id="content" class="content" role="main">
-    {% if pagination.num > 1 %}
+    {% if pagination.page > 1 %}
       <div class="extra-pagination inner">
         {% include "_pagination.html" %}
       </div>
@@ -66,10 +66,10 @@
 
   <footer class="site-footer clearfix">
     <section class="copyright"><a href="http://blog.hswolff.com">Harry Wolff</a> &copy; 2015</section>
-    <section class="poweredby">Published with <a href="http://www.metalsmith.io/">metalsmith</a>, using <a href="https://ghost.org">Ghost's</a> <a href="https://github.com/TryGhost/Casper">Casper</a> theme</section>
+    <section class="poweredby">joyfully published with <a href="http://yarnjs.github.io/">yarn</a>, using <a href="https://ghost.org">Ghost's</a> <a href="https://github.com/TryGhost/Casper">Casper</a> theme</section>
   </footer>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/{{fingerprint['js/scripts.js']}}"></script>
+  <script type="text/javascript" src="{{theme.js}}"></script>
 </body>
 </html>

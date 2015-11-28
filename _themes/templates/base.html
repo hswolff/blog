@@ -18,14 +18,14 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
   <link rel="alternate" type="application/rss+xml" title="Harry Wolff" href="http://feeds.feedburner.com/harrywolff/zOZJ" />
-  <link rel="canonical" href="{{page.url | absolute_url(site.url) if page.url else pagination.url | absolute_url(site.url)}}" />
+  <link rel="canonical" href="{{file.url | absolute_url(site.url) if file.url else pagination.url | absolute_url(site.url)}}" />
   {% if pagination.next %}
   <link rel="next" href="{{pagination.next_link | absolute_url(site.url)}}" />
   {% endif %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
 
-  {% if page.date %}
+  {% if file.date %}
     <header class="main-header post-head no-cover">
       <nav class="main-nav clearfix">
         <a class="back-button icon-arrow-left" href="/">Home</a>

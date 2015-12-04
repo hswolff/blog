@@ -9,7 +9,8 @@ ga('send', 'pageview');
 
 // Chartbeat
 var _sf_async_config = {};
-_sf_async_config.domain = 'blog.hswolff.com';
+_sf_async_config.domain = 'hswolff.com';
+_sf_async_config.sections = 'blog';
 _sf_async_config.uid = 47740;
 _sf_async_config.useCanonical = true;
 

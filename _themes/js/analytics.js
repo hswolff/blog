@@ -8,11 +8,11 @@ ga('create', 'UA-12625863-1', 'harrywolff.com');
 ga('send', 'pageview');
 
 // Chartbeat
-var _sf_async_config = {};
-_sf_async_config.domain = 'hswolff.com';
-_sf_async_config.sections = 'blog';
-_sf_async_config.uid = 47740;
-_sf_async_config.useCanonical = true;
+window._sf_async_config = {};
+window._sf_async_config.domain = 'hswolff.com';
+window._sf_async_config.sections = 'blog';
+window._sf_async_config.uid = 47740;
+window._sf_async_config.useCanonical = true;
 
 (function(){
   function loadChartbeat() {

@@ -11,11 +11,6 @@ site:
 file:
   url_key: slug
 
-collections:
-  favicon:
-    path: favicon.ico
-    static: true
-
 clean_destination: false
 
 plugins:

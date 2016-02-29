@@ -1,4 +1,5 @@
 ---
+markdown: false
 template: ''
 plugins:
   html-minifier:

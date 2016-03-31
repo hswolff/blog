@@ -4,7 +4,7 @@ module.exports = function(Plugin) {
       'disqus_id',
       function(url) {
         // remove first and last '/'.
-        return url.replace(/^\//, '').replace(/\/$/, '')
+        return url ? url.replace(/^\//, '').replace(/\/$/, '') : '';
       }
     ],
 

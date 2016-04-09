@@ -1,20 +1,21 @@
 <section class="comment-content">
   <hr/>
   <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var l = window.location;
-    var disqus_shortname = 'harrywolff';
-    var disqus_url = l.protocol + '//{{site.disqus_url}}/{{file.slug}}/';
-    var disqus_identifier = '{{file.slug | disqus_id}}';
-    var disqus_title = "{{file.title}}";
+  <script>
+    var disqus_config = function () {
+      var l = window.location;
+      this.page.url = l.protocol + '//{{site.disqus_url}}/{{file.slug}}/';
+      this.page.identifier = '{{file.slug | disqus_id}}';
+      this.page.title = "{{file.title}}";
+    };
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        s.src = '//harrywolff.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </section>

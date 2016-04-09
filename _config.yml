@@ -6,8 +6,8 @@ site:
   title: Harry Wolff
   author: Harry Wolff
   email: hello@hswolff.com
-  description: Personal blog of Harry Wolff (hswolff).
-  url: "http://blog.hswolff.com/"
+  description: Personal site of Harry Wolff (hswolff).
+  url: "http://hswolff.com/"
   gravatar_url: 'http://www.gravatar.com/avatar/f863e9eb811851834773398e72614dc1?d=404'
   disqus_url: blog.harrywolff.com
 
@@ -24,9 +24,6 @@ path:
 
 # Individual File configuration.
 file:
-  # What key from a File's frontmatter Yarn should use
-  # as the property to grab the URL of the file from.
-  url_key: slug
 
 # This is where you configure your collections of content.
 # For more details refer to the Collections documentation.
@@ -43,7 +40,7 @@ collections:
   post:
     path: ./_posts
     template: post
-    permalink: /:title/
+    permalink: /blog/:slug/
     filter:
       metadata:
         draft: true
@@ -56,7 +53,7 @@ collections:
       template: index
       size: 6
       permalink_index: /
-      permalink_page:  /page/:page/
+      permalink_page:  /blog/page/:page/
   tag:
     metadata: tags
     sort:
@@ -70,8 +67,8 @@ collections:
     pagination:
       template: tag
       size: 6
-      permalink_index: /tag/:metadata/
-      permalink_page:  /tag/:metadata/:page/
+      permalink_index: /blog/tag/:metadata/
+      permalink_page:  /blog/tag/:metadata/:page/
 
 # Current theme.
 # What theme your Yarn site should use when building your site.
@@ -79,6 +76,10 @@ theme: 'default'
 
 # If we should remove the compile destination folder before writing.
 clean_destination: false
+
+# Only build files that have changed.
+# This is a performance improvement to the time it takes to build your site.
+incremental: true
 
 # What file extensions we should recognize as a markdown file.
 markdown_extension:

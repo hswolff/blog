@@ -9,7 +9,7 @@ site:
   description: Personal site of Harry Wolff (hswolff).
   url: "http://hswolff.com/"
   gravatar_url: 'http://www.gravatar.com/avatar/f863e9eb811851834773398e72614dc1?d=404'
-  disqus_url: blog.harrywolff.com
+  disqus_url: hswolff.com
 
 # Where things are.
 # If you have a unique layout for your site and want to

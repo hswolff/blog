@@ -12,9 +12,9 @@ plugins:
     <description>{{ site.description | escape }}</description>
     <link>{{ site.url }}</link>
     <atom:link href="{{ site.url }}rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ yarn.time | date }}</pubDate>
-    <lastBuildDate>{{ yarn.time | date }}</lastBuildDate>
-    <generator>yarn {{yarn.version}}</generator>
+    <pubDate>{{ reptar.time | date }}</pubDate>
+    <lastBuildDate>{{ reptar.time | date }}</lastBuildDate>
+    <generator>reptar {{reptar.version}}</generator>
     {% for post in collections.post.files | reverse | limit(10) %}
       <item>
         <title>{{ post.title | escape }}</title>

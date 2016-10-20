@@ -13,7 +13,7 @@ site:
 
 # Where things are.
 # If you have a unique layout for your site and want to
-# change where Yarn looks for certain files you can change
+# change where Reptar looks for certain files you can change
 # them here. All files are relative to where the `_config.yml`
 # is found.
 path:
@@ -67,7 +67,7 @@ collections:
       page:  /blog/tag/:metadata/:page/
 
 # Current theme.
-# What theme your Yarn site should use when building your site.
+# What theme your Reptar site should use when building your site.
 theme: 'default'
 
 # If we should remove the compile destination folder before writing.

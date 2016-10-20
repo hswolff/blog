@@ -30,6 +30,7 @@ file:
          path: ./
       values:
         template: page
+        permalink: /:title/
     -
       scope:
          path: ./_posts

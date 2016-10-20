@@ -1,6 +1,7 @@
 ---
 markdown: false
 template: ''
+url: rss.xml
 plugins:
   html-minifier:
     enabled: false

@@ -98,7 +98,7 @@ markdown:
   # https://github.com/markdown-it/markdown-it#init-with-presets-and-options
   options:
     preset:       'commonmark'
-    highlight:    true
+    highlight:    prism
 
 # Serving.
 # When running `yarn serve` what settings should be used.

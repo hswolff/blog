@@ -1,3 +1,3 @@
 # blog
 
-spinning on [yarn](http://yarnjs.github.io/)
+spinning on [reptar](http://reptar.github.io/)

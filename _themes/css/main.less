@@ -1,26 +1,20 @@
 @import (inline) "screen.css";
 @import (inline) "highlight.css";
-@import "about.less";
+@import "header.less";
 
-/*
-    Header styles
- */
+.external-networks a {
+  display: inline-block;
+  margin: 0 5px;
 
-.main-header {
-    height: 55%;
-    min-height: 180px;
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
-.page-title {
-    color: #444;
-}
-
-.page-description {
-    color: rgba(68, 68, 68, 0.8);
-}
-
-.blog-logo img {
-    border-radius: 50%;
+.external-networks a,
+.external-networks a img {
+  width: 34px;
+  height: 34px;
 }
 
 

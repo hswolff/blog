@@ -24,35 +24,28 @@
   {% endif %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
-
-  {% if file.date %}
-    <header class="main-header post-head no-cover">
-      <nav class="main-nav clearfix">
-        <a class="back-button icon-arrow-left" href="/">Home</a>
-
-        <a class="subscribe-button icon-feed" href="http://feeds.feedburner.com/harrywolff/zOZJ">Subscribe</a>
-      </nav>
-    </header>
-  {% else %}
-    <header class="main-header {% if pagination.metadata %}tag-head{% endif %}" style="background-image: url(/images/background-top.jpg)">
-      <nav class="main-nav overlay clearfix">
-        {% if pagination.metadata %}
-          <a class="back-button icon-arrow-left" href="/">Home</a>
-        {% else %}
-          <a class="blog-logo" href="/"><img src="/images/profile.jpg" alt="Blog Logo" /></a>
-        {% endif %}
-        <a class="subscribe-button icon-feed" href="http://feeds.feedburner.com/harrywolff/zOZJ">Subscribe</a>
-      </nav>
-      <div class="vertical">
-        <div class="main-header-content inner">
-          <h1 class="page-title">{% block header_title %}Harry Wolff{% endblock %}</h1>
-          <h2 class="page-description">{% block header_description %}{% endblock %}</h2>
+  <header class="main-header {% if pagination.metadata %}tag-head{% endif %}">
+    <div class="main-header-content">
+      <a class="main-header-logo" href="/">
+        <img src="/images/profile.jpg" alt="Blog Logo" />
+      </a>
+      <div class="main-header-description">
+        <a class="page-title" href="/">
+          <h1 class="page-title">Harry Wolff</h1>
+        </a>
+        <h2 class="page-description">You can't escape my laugh.</h2>
+        <div class="main-nav">
+          <a href="/about/">About</a>
+          <a href="/archive/">Archive</a>
+          <a class="subscribe-button icon-feed" href="http://feeds.feedburner.com/harrywolff/zOZJ">Subscribe</a>
         </div>
       </div>
-    </header>
-  {% endif%}
+    </div>
+  </header>
 
   <main id="content" class="content" role="main">
+    {% block content_header %}{% endblock%}
+
     {% if pagination.page > 1 %}
       <div class="extra-pagination inner">
         {% include "_pagination.html" %}
@@ -65,8 +58,8 @@
   </main>
 
   <footer class="site-footer clearfix">
-    <section class="copyright"><a href="http://blog.hswolff.com">Harry Wolff</a> &copy; 2016</section>
-    <section class="poweredby">joyfully published with <a href="http://reptar.github.io/">Reptar</a>, using <a href="https://ghost.org">Ghost's</a> <a href="https://github.com/TryGhost/Casper">Casper</a> theme</section>
+    <section class="copyright"><a href="http://hswolff.com/">Harry Wolff</a> &copy; 2016</section>
+    <section class="poweredby">joyfully published with <a href="http://reptar.github.io/">Reptar</a>, based on <a href="https://ghost.org">Ghost's</a> <a href="https://github.com/TryGhost/Casper">Casper</a> theme</section>
   </footer>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

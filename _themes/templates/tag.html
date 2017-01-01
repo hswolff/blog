@@ -4,11 +4,13 @@
 
 {% block body_class %}tag-template {% if pagination.page > 1 %}archive-template{% endif %}{% endblock%}
 
-{% block header_title %}{{pagination.metadata}}{% endblock %}
-{% block header_description %}A {{pagination.total}}-post collection{% endblock %}
+{% block content_header %}
+<aside class="tag-header">
+  <h2>{{pagination.metadata}}</h2>
+  <p>{{pagination.total}}-post collection</p>
+</aside>
+{% endblock%}
 
 {% block content %}
-
 {% include '_loop.html' %}
-
 {% endblock%}

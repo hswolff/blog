@@ -4,7 +4,9 @@
   "repository": "git://github.com/hswolff/blog.git",
   "license": "MIT",
   "dependencies": {
-    "read-time": "^1.0.0"
+    "read-time": "^1.0.0",
+    "reptar-excerpt": "^1.0.0",
+    "reptar-html-minifier": "^1.0.0"
   },
   "devDependencies": {}
 }

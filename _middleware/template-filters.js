@@ -1,4 +1,4 @@
-module.exports = function(Plugin) {
+module.exports = reptar => {
   [
     [
       'disqus_id',
@@ -15,6 +15,6 @@ module.exports = function(Plugin) {
       }
     ]
   ].forEach(filter => {
-    Plugin.template.addFilter.apply(undefined, filter);
+    reptar.renderer.addTemplateFilter.apply(undefined, filter);
   });
-};
+}

@@ -55,6 +55,10 @@ module.exports = {
     extensions: ['markdown', 'mkdown', 'mkdn', 'mkd', 'md'],
     options: { preset: 'commonmark', highlight: 'prism' },
   },
+  ignore: [
+    // Ignore local test file.
+    /reptar.js/,
+  ],
   server: { port: 8080, host: '127.0.0.1', baseurl: '' },
   newFilePermalink: '/_posts/:date|YYYY/:date|YYYY-:date|MM-:date|D-:title.md',
   middlewares: [

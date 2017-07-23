@@ -19,6 +19,13 @@ I also gave this presentation for the [Crater Remote Conference](/blog/react-nat
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/gEHyyd9RU3s?rel=0" frameborder="0" allowfullscreen></iframe>
 
+I also gave this presentation as [a workshop for ForwardJS 2017.](https://forwardcourses.com/workshops/116)
+
+<a href="https://forwardcourses.com/workshops/116">
+    <img width="640" src="/images/forwardjs-conference.jpg" />
+</a>
+<br />
+
 ## From Closure To Angular
 
 When I worked at [Chartbeat](http://www.chartbeat.com/) I gave a talk about our [migration from Google Closure to Angular 1.](http://hswolff.com/blog/chartbeat-presents-at-front-end-meetup/)

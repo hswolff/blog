@@ -3,8 +3,12 @@
   "version": "2.0.0",
   "repository": "git://github.com/hswolff/blog.git",
   "license": "MIT",
+  "scripts": {
+    "build": "reptar build"
+  },
   "dependencies": {
     "read-time": "^1.0.0",
+    "reptar": "^3.3.1",
     "reptar-excerpt": "^1.0.0",
     "reptar-html-minifier": "^1.0.0"
   },

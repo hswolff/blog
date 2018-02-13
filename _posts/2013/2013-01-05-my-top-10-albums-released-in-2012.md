@@ -4,7 +4,6 @@ slug: my-top-10-albums-released-in-2012
 date: 2013-01-05T17:06:57.000Z
 updated: 2013-01-05T17:06:57.000Z
 tags:
-- 2012
 - albums
 - list
 - music

@@ -4,7 +4,6 @@ slug: at-work-redesign-of-dlife-com
 date: 2011-03-01T13:50:39.000Z
 updated: 2011-03-01T13:50:39.000Z
 tags:
-- 2.0
 - dlife
 - graphics
 - new

@@ -4,7 +4,6 @@ slug: mac-os-x-lion-review
 date: 2011-07-24T09:43:42.000Z
 updated: 2011-07-24T09:44:15.000Z
 tags:
-- 10.7
 - apple
 - lion
 - operating system

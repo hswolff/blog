@@ -4,7 +4,6 @@ slug: 23andme-genetic-testing
 date: 2010-06-11T10:00:10.000Z
 updated: 2010-06-20T22:31:01.000Z
 tags:
-- 23andMe
 - dna
 - guide
 - health

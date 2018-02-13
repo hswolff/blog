@@ -6,7 +6,8 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "lint": "eslint ."
   },
   "dependencies": {
     "gatsby": "^1.9.158",
@@ -14,5 +15,9 @@
     "gatsby-plugin-react-helmet": "^2.0.3",
     "react-helmet": "^5.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.17.0",
+    "eslint-plugin-react": "^7.6.1"
+  }
 }

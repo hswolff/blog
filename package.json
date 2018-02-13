@@ -4,13 +4,15 @@
   "repository": "git://github.com/hswolff/blog.git",
   "license": "MIT",
   "scripts": {
-    "build": "reptar build"
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "serve": "gatsby serve"
   },
   "dependencies": {
-    "read-time": "^1.0.0",
-    "reptar": "^3.3.1",
-    "reptar-excerpt": "^1.0.0",
-    "reptar-html-minifier": "^1.0.0"
+    "gatsby": "^1.9.158",
+    "gatsby-link": "^1.6.34",
+    "gatsby-plugin-react-helmet": "^2.0.3",
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {}
 }

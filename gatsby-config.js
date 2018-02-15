@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Harry Wolff',
-    description: 'Me me me.',
+    description: 'Personal site of Harry Wolff (hswolff).',
     siteUrl: 'http://hswolff.com',
   },
   plugins: [
@@ -42,7 +42,6 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {},
     },
-    /*
     {
       resolve: 'gatsby-plugin-feed',
       options: {
@@ -59,31 +58,35 @@ module.exports = {
       `,
         feeds: [
           {
-            serialize: ({ query: { site, allEpisodesJson } }) => {
-              return allEpisodesJson.edges.map(edge => {
-                return Object.assign({}, edge.node, {
-                  description: `Episode ${edge.node.fields.episodeNumber}.`,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(({ node }) => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  url: site.siteMetadata.siteUrl + node.fields.url,
+                  guid: site.siteMetadata.siteUrl + node.fields.url,
+                  category: node.frontmatter.tags,
                 });
               });
             },
             query: `
             {
-              allEpisodesJson(sort: {fields: [date___end], order: DESC}) {
+              allMarkdownRemark(
+                limit: 10
+                sort: { fields: [frontmatter___date], order: DESC }
+                filter: { id: { regex: "/_posts/" } }
+              ) {
                 edges {
                   node {
-                    title
-                    fields {
-                      episodeNumber
+                    id
+                    excerpt
+                    frontmatter {
+                      title
                       slug
+                      date
+                      tags
                     }
-                    youtube {
-                      id
-                    }
-                    date {
-                      start
-                      end
+                    fields {
+                      url
                     }
                   }
                 }
@@ -95,6 +98,5 @@ module.exports = {
         ],
       },
     },
-    */
   ],
 };

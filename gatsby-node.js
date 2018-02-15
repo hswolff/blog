@@ -61,7 +61,7 @@ exports.createPages = async function({ boundActionCreators, graphql }) {
     context: {},
     pathPrefix: createFullUrl('page'),
     buildPath: (index, pathPrefix) =>
-      index > 1 ? `${pathPrefix}/${index}` : '/',
+      index > 1 ? `${pathPrefix}${index}` : '/',
   });
 
   createPagePages({
@@ -76,7 +76,7 @@ function getMarkdownQuery({ regex } = {}) {
   return `
     {
       allMarkdownRemark(
-        limit: 36
+        # limit: 36
         sort: { fields: [frontmatter___date], order: DESC }
         filter: { id: { regex: "${regex}" } }
       ) {

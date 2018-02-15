@@ -25,6 +25,7 @@
     "gatsby-plugin-typography": "^1.7.14",
     "gatsby-source-filesystem": "^1.5.19",
     "gatsby-transformer-remark": "^1.7.32",
+    "lodash": "^4.17.5",
     "react-emotion": "^9.0.0",
     "react-helmet": "^5.2.0",
     "typography": "^0.16.6"

@@ -18,8 +18,8 @@ export default function PageTemplate({ data: { markdownRemark } }) {
 }
 
 export const pageQuery = graphql`
-  query PageBySlug($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+  query PageBySlug($title: String!) {
+    markdownRemark(frontmatter: { title: { eq: $title } }) {
       frontmatter {
         title
         slug

@@ -11,8 +11,8 @@ const NavLink = props => {
 
 export default ({ pathContext }) => {
   const { group, index, first, last, pageCount, pathPrefix } = pathContext;
-  const previousUrl = index - 1 == 1 ? '' : (index - 1).toString();
-  const nextUrl = `${pathPrefix}/${index + 1}`;
+  const previousUrl = index - 1 == 1 ? '' : `${pathPrefix}${index - 1}/`;
+  const nextUrl = `${pathPrefix}${index + 1}/`;
 
   return (
     <div>
@@ -23,7 +23,7 @@ export default ({ pathContext }) => {
       {group.map(({ node }) => (
         <div key={node.id} className="blogListing">
           <div className="date">{node.frontmatter.date}</div>
-          <Link className="blogUrl" to={node.frontmatter.slug}>
+          <Link className="blogUrl" to={node.fields.url}>
             {node.frontmatter.title}
           </Link>
           <div>{node.excerpt}</div>

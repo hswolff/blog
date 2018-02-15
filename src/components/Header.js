@@ -26,6 +26,35 @@ const Header = () => (
           Gatsby
         </Link>
       </h1>
+      <div>
+        <Link
+          to="/about"
+          style={{
+            color: 'white',
+            textDecoration: 'none',
+          }}
+        >
+          About
+        </Link>
+        <Link
+          to="/talks"
+          style={{
+            color: 'white',
+            textDecoration: 'none',
+          }}
+        >
+          Talks
+        </Link>
+        <Link
+          to="/archive"
+          style={{
+            color: 'white',
+            textDecoration: 'none',
+          }}
+        >
+          Archive
+        </Link>
+      </div>
     </div>
   </div>
 );

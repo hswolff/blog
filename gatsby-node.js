@@ -24,6 +24,14 @@ function addUrlToBlogPost({ node, boundActionCreators }) {
     name: 'url',
     value: createFullUrl(slug),
   });
+
+  createNodeField({
+    node,
+    name: 'tagsUrls',
+    value: node.frontmatter.tags
+      ? node.frontmatter.tags.map(tag => `/blog/tag/${tag}/`)
+      : [],
+  });
 }
 
 exports.createPages = async function({ boundActionCreators, graphql }) {
@@ -56,12 +64,12 @@ exports.createPages = async function({ boundActionCreators, graphql }) {
   createPaginatedPages({
     edges: blogPostEdges,
     createPage: createPage,
-    pageTemplate: 'src/templates/index.js',
+    pageTemplate: 'src/templates/BlogListTemplate.js',
     pageLength: 6,
     context: {},
     pathPrefix: createFullUrl('page'),
     buildPath: (index, pathPrefix) =>
-      index > 1 ? `${pathPrefix}${index}` : '/',
+      index > 1 ? `${pathPrefix}${index}` : '/blog/',
   });
 
   createPagePages({
@@ -94,6 +102,7 @@ function getMarkdownQuery({ regex } = {}) {
             }
             fields {
               url
+              tagsUrls
             }
           }
         }

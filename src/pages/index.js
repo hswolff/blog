@@ -10,7 +10,8 @@ const IndexPage = props => {
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
       <p>{totalCount}</p>
-      <Link to="/page-2/">Go to page 2</Link>
+      <Link to="/blog/">Blog</Link>
+      <h2>Posts</h2>
       {edges.map(({ node }) => (
         <div key={node.id}>
           <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>

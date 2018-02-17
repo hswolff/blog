@@ -11,7 +11,7 @@ const NavLink = props => {
 
 export default ({ pathContext }) => {
   const { group, index, first, last, pageCount, pathPrefix } = pathContext;
-  const previousUrl = index - 1 == 1 ? '' : `${pathPrefix}${index - 1}/`;
+  const previousUrl = index - 1 == 1 ? '/blog/' : `${pathPrefix}${index - 1}/`;
   const nextUrl = `${pathPrefix}${index + 1}/`;
 
   return (
@@ -27,6 +27,13 @@ export default ({ pathContext }) => {
             {node.frontmatter.title}
           </Link>
           <div>{node.excerpt}</div>
+          <ul>
+            {node.frontmatter.tags.map((tag, index) => (
+              <li key={tag}>
+                <Link to={node.fields.tagsUrls[index]}>{tag}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
       <div className="previousLink">

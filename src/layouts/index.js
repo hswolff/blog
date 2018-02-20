@@ -1,21 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import Header from '../components/Header';
 
-const TemplateWrapper = ({ children }) => (
+const IndexLayout = ({ children, data: { site: { siteMetadata } } }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title={siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: siteMetadata.description },
+        { name: 'keywords', content: 'Harry Wolff, javascript' },
       ]}
     />
     <Header />
     <div
-      style={{
+      css={{
         margin: '0 auto',
         maxWidth: 960,
         padding: '0px 1.0875rem 1.45rem',
@@ -27,8 +26,16 @@ const TemplateWrapper = ({ children }) => (
   </div>
 );
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-};
+export default IndexLayout;
 
-export default TemplateWrapper;
+export const pageQuery = graphql`
+  query TemplateSiteMetadata {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
+  }
+`;

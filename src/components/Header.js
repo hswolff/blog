@@ -3,22 +3,22 @@ import Link from 'gatsby-link';
 
 const Header = () => (
   <div
-    style={{
+    css={{
       background: 'rebeccapurple',
       marginBottom: '1.45rem',
     }}
   >
     <div
-      style={{
+      css={{
         margin: '0 auto',
         maxWidth: 960,
         padding: '1.45rem 1.0875rem',
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 css={{ margin: 0 }}>
         <Link
           to="/"
-          style={{
+          css={{
             color: 'white',
             textDecoration: 'none',
           }}
@@ -29,7 +29,7 @@ const Header = () => (
       <div>
         <Link
           to="/about"
-          style={{
+          css={{
             color: 'white',
             textDecoration: 'none',
           }}
@@ -38,7 +38,7 @@ const Header = () => (
         </Link>
         <Link
           to="/talks"
-          style={{
+          css={{
             color: 'white',
             textDecoration: 'none',
           }}
@@ -47,7 +47,7 @@ const Header = () => (
         </Link>
         <Link
           to="/archive"
-          style={{
+          css={{
             color: 'white',
             textDecoration: 'none',
           }}

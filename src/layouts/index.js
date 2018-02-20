@@ -7,6 +7,7 @@ const IndexLayout = ({ children, data: { site: { siteMetadata } } }) => (
   <div>
     <Helmet
       title={siteMetadata.title}
+      titleTemplate={`%s | ${siteMetadata.title}`}
       meta={[
         { name: 'description', content: siteMetadata.description },
         { name: 'keywords', content: 'Harry Wolff, javascript' },

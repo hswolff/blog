@@ -46,7 +46,7 @@ const Header = () => (
           Talks
         </Link>
         <Link
-          to="/archive"
+          to="/blog/archive/"
           css={{
             color: 'white',
             textDecoration: 'none',

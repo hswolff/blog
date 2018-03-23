@@ -12,8 +12,11 @@ export default function Footer() {
         border-top: 1px solid ${color.divider};
       `}
     >
-      A laugh a day keeps the doctor away.<br />This is not professional medical
-      advice.
+      A laugh a day keeps the doctor away.
+      <br />
+      This is not professional medical advice.
+      <br />
+      <a href="https://github.com/hswolff/blog">Source Code</a>
     </footer>
   );
 }

@@ -1,28 +1,43 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { DateTime } from 'luxon';
 
 const IndexPage = props => {
   const { allMarkdownRemark } = props.data;
-  const { totalCount, edges } = allMarkdownRemark;
+  const { edges } = allMarkdownRemark;
   return (
     <div>
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <p>{totalCount}</p>
-      <h1>Current Projects</h1>
+      <h1>Howdy! 👋</h1>
+      <p>My name is Harry Wolff and welcome to my website!</p>
+      <p>
+        I&apos;m a software engineer currently working at{' '}
+        <a href="http://mongodb.com/">MongoDB</a>.
+      </p>
+      <p>
+        I have my own weekly YouTube show called{' '}
+        <a href="http://theconsolelog.com/">The Console Log</a> where I talk
+        about JavaScript and the web.
+      </p>
+      <p>
+        I also <Link to="/blog/">blog</Link>! Have a look at my latest posts.
+      </p>
       <ul>
-        <li>The Console Log</li>
-        <li>MongoDB</li>
-        <li>Blog</li>
+        {edges.map(({ node }) => (
+          <li key={node.id}>
+            <Link to={node.fields.url}>{node.frontmatter.title}</Link>{' '}
+            <small>
+              ({DateTime.fromISO(node.frontmatter.date).toFormat('L/d/yy')})
+            </small>
+          </li>
+        ))}
       </ul>
-      <Link to="/blog/">Blog</Link>
-      <h2>Posts</h2>
-      {edges.map(({ node }) => (
-        <div key={node.id}>
-          <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
-        </div>
-      ))}
+      <p>
+        I&apos;m active on <a href="https://twitter.com/hswolff">Twitter</a>,{' '}
+        <a href="http://instagram.com/hswolff">Instagram</a>,{' '}
+        <a href="https://github.com/hswolff">GitHub</a>, and many other{' '}
+        <Link to="/about/">social networks</Link>.
+      </p>
+      <p>Thanks for stopping by!</p>
     </div>
   );
 };
@@ -36,7 +51,6 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { id: { regex: "/_posts/" } }
     ) {
-      totalCount
       edges {
         node {
           id
@@ -44,6 +58,10 @@ export const pageQuery = graphql`
             title
             slug
             date
+          }
+          fields {
+            url
+            tagsUrls
           }
         }
       }

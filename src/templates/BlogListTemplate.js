@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'react-emotion';
-import { bgColor } from '../utils/css';
+import { color } from '../utils/css';
 import { lighten } from 'polished';
 
 import BlogListItem from '../components/BlogListItem';
 
-const lighterBgColor = lighten(0.4, bgColor);
+const lighterBgColor = lighten(0.4, color.background);
 
 export default ({ pathContext }) => {
   const { group, index, first, last, pageCount, pathPrefix } = pathContext;
@@ -71,9 +71,9 @@ const NavButton = styled('div')`
   border-radius: 4px;
   transition: border-color 0.2s ease-in-out;
   &:hover {
-    border-color: ${bgColor};
+    border-color: ${color.background};
     a {
-      color: ${bgColor};
+      color: ${color.background};
     }
   }
   a {

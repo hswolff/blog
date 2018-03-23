@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 import styled from 'react-emotion';
 import { DateTime } from 'luxon';
 import { lighten } from 'polished';
-import { bgColor } from '../utils/css';
+import { color } from '../utils/css';
 
 export default function BlogListItem(props) {
   const { asPage } = props;
@@ -18,7 +18,7 @@ export default function BlogListItem(props) {
           opacity: 1;
         }
         & + & {
-          border-top: 1px solid ${lighten(0.8, bgColor)};
+          border-top: 1px solid ${color.divider};
         }
       `}
     >
@@ -46,7 +46,7 @@ export default function BlogListItem(props) {
           font-size: 0.82rem;
           &,
           a {
-            color: ${lighten(0.3, bgColor)};
+            color: ${lighten(0.3, color.background)};
           }
         `}
       >
@@ -99,7 +99,7 @@ BlogListItem.defaultProps = {
 const BaseTitle = styled('h2')`
   margin: 0;
   a {
-    color: ${bgColor};
+    color: ${color.background};
     box-shadow: none;
     transition: opacity ease-in 0.2s;
     ${({ asPage }) => !asPage && 'opacity: 0.8;'};

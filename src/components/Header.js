@@ -2,12 +2,12 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'react-emotion';
 import { css } from 'emotion';
-import { blogContent, bgColor } from '../utils/css';
+import { blogContent, color, mediaQueries } from '../utils/css';
 
 const Header = () => (
   <div
     css={{
-      background: bgColor,
+      background: color.background,
       marginBottom: '1.45rem',
     }}
   >
@@ -73,9 +73,15 @@ const Inner = styled('div')`
   padding-top: 1.45rem;
   padding-bottom: 0;
   display: flex;
+  flex-direction: row;
   a {
     box-shadow: none;
   }
+  ${mediaQueries.phone(css`
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+  `)};
 `;
 
 const Left = styled('div')``;

@@ -12,7 +12,7 @@ const IndexLayout = ({ children, data: { site: { siteMetadata } } }) => (
       titleTemplate={`%s | ${siteMetadata.title}`}
       meta={[
         { name: 'description', content: siteMetadata.description },
-        { name: 'keywords', content: 'Harry Wolff, javascript' },
+        { name: 'keywords', content: siteMetadata.keywords },
       ]}
     />
     <Header />
@@ -37,6 +37,7 @@ export const pageQuery = graphql`
         title
         description
         siteUrl
+        keywords
       }
     }
   }

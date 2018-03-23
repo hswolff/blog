@@ -5,6 +5,8 @@ module.exports = {
     title: 'Harry Wolff',
     description: 'Personal site of Harry Wolff (hswolff).',
     siteUrl: 'http://hswolff.com',
+    keywords:
+      'javascript, code, tutorial, review, technology, writing, blog, personal, music',
   },
   plugins: [
     'gatsby-plugin-react-next',

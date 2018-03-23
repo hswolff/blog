@@ -112,7 +112,7 @@ function getMarkdownQuery({ regex } = {}) {
 }
 
 function createBlogPostPages({ edges, createPage }) {
-  const component = path.resolve('src/templates/PostTemplate.js');
+  const component = path.resolve('src/templates/BlogPostTemplate.js');
 
   edges.forEach(({ node }) => {
     const { slug } = node.frontmatter;

@@ -70,7 +70,7 @@ export default function BlogListItem(props) {
             }
           `}
         >
-          {props.frontmatter.tags.map((tag, index) => (
+          {(props.frontmatter.tags || []).map((tag, index) => (
             <span key={tag}>
               <Link to={props.fields.tagsUrls[index]}>{tag}</Link>
               {index + 1 !== props.frontmatter.tags.length && ', '}

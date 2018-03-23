@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import { blogContent } from '../utils/css';
 import Header from '../components/Header';
 
 const IndexLayout = ({ children, data: { site: { siteMetadata } } }) => (
@@ -14,16 +15,14 @@ const IndexLayout = ({ children, data: { site: { siteMetadata } } }) => (
       ]}
     />
     <Header />
-    <div
+    <main
+      className={blogContent}
       css={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
         paddingTop: 0,
       }}
     >
       {children()}
-    </div>
+    </main>
   </div>
 );
 

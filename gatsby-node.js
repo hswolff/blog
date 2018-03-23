@@ -92,7 +92,7 @@ function getMarkdownQuery({ regex } = {}) {
         edges {
           node {
             id
-            excerpt
+            excerpt(pruneLength: 280)
             timeToRead
             frontmatter {
               title

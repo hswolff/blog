@@ -10,6 +10,12 @@ const IndexPage = props => {
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
       <p>{totalCount}</p>
+      <h1>Current Projects</h1>
+      <ul>
+        <li>The Console Log</li>
+        <li>MongoDB</li>
+        <li>Blog</li>
+      </ul>
       <Link to="/blog/">Blog</Link>
       <h2>Posts</h2>
       {edges.map(({ node }) => (

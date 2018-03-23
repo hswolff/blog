@@ -80,7 +80,7 @@ module.exports = {
                 edges {
                   node {
                     id
-                    excerpt
+                    excerpt(pruneLength: 280)
                     frontmatter {
                       title
                       slug

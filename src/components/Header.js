@@ -1,19 +1,22 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { blogContent, bgColor } from '../utils/css';
 
 const Header = () => (
   <div
     css={{
-      background: 'rebeccapurple',
+      background: bgColor,
       marginBottom: '1.45rem',
     }}
   >
     <div
-      css={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
+      css={`
+        ${blogContent};
+        padding-top: 1.45rem;
+        a {
+          box-shadow: none;
+        }
+      `}
     >
       <h1 css={{ margin: 0 }}>
         <Link
@@ -23,12 +26,21 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          Harry Wolff
         </Link>
       </h1>
       <div>
         <Link
-          to="/about"
+          to="/blog/"
+          css={{
+            color: 'white',
+            textDecoration: 'none',
+          }}
+        >
+          Blog
+        </Link>
+        <Link
+          to="/about/"
           css={{
             color: 'white',
             textDecoration: 'none',
@@ -37,7 +49,7 @@ const Header = () => (
           About
         </Link>
         <Link
-          to="/talks"
+          to="/talks/"
           css={{
             color: 'white',
             textDecoration: 'none',

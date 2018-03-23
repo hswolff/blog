@@ -1,6 +1,12 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { DateTime } from 'luxon';
+import styled from 'react-emotion';
+import { bgColor } from '../utils/css';
+import { lighten } from 'polished';
+
+import BlogListItem from '../components/BlogListItem';
+
+const lighterBgColor = lighten(0.4, bgColor);
 
 export default ({ pathContext }) => {
   const { group, index, first, last, pageCount, pathPrefix } = pathContext;
@@ -9,16 +15,27 @@ export default ({ pathContext }) => {
 
   return (
     <div>
-      <h4>
-        Page {index} of {pageCount}
-      </h4>
-
       {group.map(({ node }) => <BlogListItem key={node.id} {...node} />)}
-      <div>
-        <NavLink test={first} url={previousUrl} text="Go to Previous Page" />
-      </div>
-      <div>
-        <NavLink test={last} url={nextUrl} text="Go to Next Page" />
+      <div
+        css={`
+          margin: 40px 0;
+          display: flex;
+          justify-content: space-between;
+          align-content: center;
+          font-size: 80%;
+          &, a {
+            color: ${lighterBgColor};
+        `}
+      >
+        <NavButton>
+          <NavLink test={first} url={previousUrl} text="Go to Previous Page" />
+        </NavButton>
+        <span>
+          Page {index} of {pageCount}
+        </span>
+        <NavButton>
+          <NavLink test={last} url={nextUrl} text="Go to Next Page" />
+        </NavButton>
       </div>
     </div>
   );
@@ -32,22 +49,20 @@ const NavLink = props => {
   }
 };
 
-function formatDate(date) {
-  return DateTime.fromISO(date).toFormat('LLLL d y');
-}
-
-const BlogListItem = props => (
-  <div>
-    <div>{formatDate(props.frontmatter.date)}</div>
-    <Link to={props.fields.url}>{props.frontmatter.title}</Link>
-    <div>{props.excerpt}</div>
-    <ul>
-      {props.frontmatter.tags.map((tag, index) => (
-        <li key={tag}>
-          <Link to={props.fields.tagsUrls[index]}>{tag}</Link>
-        </li>
-      ))}
-    </ul>
-    <div>Read time {props.timeToRead}</div>
-  </div>
-);
+const NavButton = styled('div')`
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${lighterBgColor};
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: border-color 0.2s ease-in-out;
+  &:hover {
+    border-color: ${bgColor};
+    a {
+      color: ${bgColor};
+    }
+  }
+  a {
+    box-shadow: none;
+  }
+`;

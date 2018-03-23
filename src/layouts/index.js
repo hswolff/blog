@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import { blogContent } from '../utils/css';
+import { blogContent, color } from '../utils/css';
 import Header from '../components/Header';
 
 const IndexLayout = ({ children, data: { site: { siteMetadata } } }) => (
@@ -23,6 +23,18 @@ const IndexLayout = ({ children, data: { site: { siteMetadata } } }) => (
     >
       {children()}
     </main>
+    <footer
+      css={`
+        ${blogContent};
+        padding-top: 1.45rem;
+        font-size: 0.7rem;
+        text-align: center;
+        border-top: 1px solid ${color.background};
+      `}
+    >
+      A laugh a day keeps the doctor away.<br />This is not professional medical
+      advice.
+    </footer>
   </div>
 );
 

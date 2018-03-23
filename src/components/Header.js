@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import styled from 'react-emotion';
+import { css } from 'emotion';
 import { blogContent, bgColor } from '../utils/css';
 
 const Header = () => (
@@ -9,66 +11,95 @@ const Header = () => (
       marginBottom: '1.45rem',
     }}
   >
-    <div
-      css={`
-        ${blogContent};
-        padding-top: 1.45rem;
-        a {
-          box-shadow: none;
-        }
-      `}
-    >
-      <h1 css={{ margin: 0 }}>
-        <Link
-          to="/"
-          css={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Harry Wolff
+    <Inner>
+      <Left>
+        <Link to="/">
+          <img
+            src="/images/profile.jpg"
+            css={`
+              display: block;
+              height: 125px;
+              width: auto;
+              border-radius: 50%;
+            `}
+          />
         </Link>
-      </h1>
-      <div>
-        <Link
-          to="/blog/"
-          css={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
+      </Left>
+      <Right>
+        <h1
+          css={`
+            margin: 0;
+            margin-left: -4px;
+          `}
         >
-          Blog
-        </Link>
-        <Link
-          to="/about/"
-          css={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
+          <Link
+            to="/"
+            css={{
+              color: 'white',
+              textDecoration: 'none',
+              fontSize: '3rem',
+            }}
+          >
+            Harry Wolff
+          </Link>
+        </h1>
+        <div
+          css={`
+            margin: 0;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+          `}
         >
-          About
-        </Link>
-        <Link
-          to="/talks/"
-          css={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Talks
-        </Link>
-        <Link
-          to="/blog/archive/"
-          css={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Archive
-        </Link>
-      </div>
-    </div>
+          You can&apos;t escape my laugh.
+        </div>
+        <NavRow>
+          <NavLink to="/about/">About</NavLink>
+          <NavLink to="/talks/">Talks</NavLink>
+          <NavLink to="/blog/">Blog</NavLink>
+          <NavLink to="/blog/archive/">Archive</NavLink>
+          <NavLink href="http://feeds.feedburner.com/harrywolff/zOZJ">
+            RSS Feed
+          </NavLink>
+        </NavRow>
+      </Right>
+    </Inner>
   </div>
 );
 
 export default Header;
+
+const Inner = styled('div')`
+  ${blogContent};
+  padding-top: 1.45rem;
+  padding-bottom: 0;
+  display: flex;
+  a {
+    box-shadow: none;
+  }
+`;
+
+const Left = styled('div')``;
+
+const Right = styled('div')`
+  padding-left: 2rem;
+`;
+
+const NavRow = styled('div')`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const NavLink = props => {
+  return React.createElement(props.href ? 'a' : Link, {
+    className: css`
+      color: #9eabb3;
+      text-decoration: none;
+      transition: color ease 0.3s;
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    `,
+    ...props,
+  });
+};

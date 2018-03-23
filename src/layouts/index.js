@@ -5,11 +5,7 @@ import { blogContent } from '../utils/css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const IndexLayout = ({
-  children,
-  data: { site: { siteMetadata } },
-  location,
-}) => (
+const IndexLayout = ({ children, data: { site: { siteMetadata } } }) => (
   <div>
     <Helmet
       title={siteMetadata.title}
@@ -28,7 +24,7 @@ const IndexLayout = ({
     >
       {children()}
     </main>
-    {location.pathname !== '/' && <Footer />}
+    <Footer />
   </div>
 );
 

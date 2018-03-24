@@ -1,6 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import 'prismjs/themes/prism.css';
+
+import '../utils/analytics';
 import { blogContent } from '../utils/css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';

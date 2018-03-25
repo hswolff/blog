@@ -2,10 +2,14 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { injectGlobal } from 'emotion';
 import BlogListItem from '../components/BlogListItem';
+import Disqus from '../components/Disqus';
 
 export default function PostTemplate({ data: { markdownRemark } }) {
-  const { html, frontmatter } = markdownRemark;
-  const { title } = frontmatter;
+  const {
+    html,
+    frontmatter: { title, slug },
+    fields: { url },
+  } = markdownRemark;
 
   return (
     <div>
@@ -18,6 +22,9 @@ export default function PostTemplate({ data: { markdownRemark } }) {
         className="blog-post-content"
         dangerouslySetInnerHTML={{ __html: html }}
       />
+
+      <hr />
+      <Disqus url={url} identifier={slug} title={title} />
     </div>
   );
 }

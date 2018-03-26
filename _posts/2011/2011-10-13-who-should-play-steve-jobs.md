@@ -6,7 +6,6 @@ updated: 2011-10-13T14:17:48.000Z
 tags:
 - acting
 - movies
-- movies
 - steve jobs
 ---
 

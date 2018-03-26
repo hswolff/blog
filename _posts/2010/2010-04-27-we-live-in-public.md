@@ -5,7 +5,6 @@ date: 2010-04-27T20:45:57.000Z
 updated: 2010-04-27T22:07:27.000Z
 tags:
 - movies
-- movies
 - reviews
 - wikipedia
 - youtube

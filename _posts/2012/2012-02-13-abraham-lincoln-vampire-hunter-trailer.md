@@ -5,7 +5,6 @@ date: 2012-02-13T14:26:41.000Z
 updated: 2012-02-13T14:26:41.000Z
 tags:
 - movies
-- movies
 - trailer
 - vampire
 ---

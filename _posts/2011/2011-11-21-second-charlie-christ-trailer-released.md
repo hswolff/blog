@@ -6,7 +6,6 @@ updated: 2012-05-28T16:05:54.000Z
 tags:
 - charlie christ
 - movies
-- movies
 - trailer
 - youtube
 ---

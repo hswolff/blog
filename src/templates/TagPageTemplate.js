@@ -1,5 +1,6 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
+import BlogListItem from '../components/BlogListItem';
 
 export default function EpisodeTagsTemplate({ pathContext }) {
   const { tags, tag } = pathContext;
@@ -13,15 +14,9 @@ export default function EpisodeTagsTemplate({ pathContext }) {
         <h1>
           {nodes.length} link{nodes.length === 1 ? '' : 's'} tagged with {name}
         </h1>
-        <ul>
-          {nodes.map(({ id, frontmatter: { title } }) => {
-            return (
-              <li key={id}>
-                <p>{title}</p>
-              </li>
-            );
-          })}
-        </ul>
+        {nodes.map(node => {
+          return <BlogListItem {...node} key={node.id} />;
+        })}
       </div>
     );
   }

@@ -1,3 +1,3 @@
 # blog
 
-roaring on [reptar](http://reptar.github.io/)
+It's where I write things!

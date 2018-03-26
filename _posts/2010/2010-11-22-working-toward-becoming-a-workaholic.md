@@ -8,7 +8,6 @@ tags:
 - logic
 - me
 - movies
-- movies
 - music
 - python
 - video

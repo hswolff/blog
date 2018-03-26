@@ -4,7 +4,6 @@ slug: free-fl-announces-amazing-mobile-plan-us-looks-on-with-envy
 date: 2012-01-15T19:00:30.000Z
 updated: 2012-01-15T19:00:30.000Z
 tags:
-- 3g
 - broadband
 - france
 - mobile

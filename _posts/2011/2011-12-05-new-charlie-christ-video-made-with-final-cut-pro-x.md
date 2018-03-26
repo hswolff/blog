@@ -7,7 +7,6 @@ tags:
 - charlie christ
 - final cut pro x
 - movies
-- movies
 - niente peaches
 - video editing
 - Videos

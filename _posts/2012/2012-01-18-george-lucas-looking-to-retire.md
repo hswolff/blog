@@ -7,7 +7,6 @@ tags:
 - director
 - george lucas
 - movies
-- movies
 - retirement
 ---
 

@@ -6,7 +6,6 @@ updated: 2010-06-29T12:42:37.000Z
 tags:
 - harry potter
 - movies
-- movies
 - nostalgia
 - trailer
 - Videos

@@ -5,7 +5,6 @@ date: 2011-10-27T17:11:51.000Z
 updated: 2011-10-27T17:11:52.000Z
 tags:
 - movies
-- movies
 - picture
 - three stooges
 ---

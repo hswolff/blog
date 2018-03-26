@@ -6,7 +6,6 @@ updated: 2012-03-02T22:04:05.000Z
 tags:
 - brave
 - movies
-- movies
 - pixar
 ---
 

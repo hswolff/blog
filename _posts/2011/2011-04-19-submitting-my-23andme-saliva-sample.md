@@ -4,7 +4,6 @@ slug: submitting-my-23andme-saliva-sample
 date: 2011-04-19T11:03:35.000Z
 updated: 2011-04-19T11:03:35.000Z
 tags:
-- 23andMe
 - dna
 - kit
 - technology

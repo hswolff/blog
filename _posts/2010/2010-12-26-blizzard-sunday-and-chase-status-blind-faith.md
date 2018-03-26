@@ -10,7 +10,6 @@ tags:
 - despicable me
 - me
 - movies
-- movies
 - music
 - taken
 - Videos

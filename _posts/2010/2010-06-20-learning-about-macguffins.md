@@ -9,7 +9,6 @@ tags:
 - learning
 - me
 - movies
-- movies
 - new
 - niente peaches
 - wave

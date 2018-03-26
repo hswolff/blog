@@ -5,7 +5,6 @@ date: 2010-06-19T23:06:31.000Z
 updated: 2010-06-21T12:54:43.000Z
 tags:
 - movies
-- movies
 - music
 - toy story
 - Videos

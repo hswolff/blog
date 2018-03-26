@@ -5,7 +5,6 @@ date: 2011-12-07T14:02:02.000Z
 updated: 2011-12-07T14:02:02.000Z
 tags:
 - movies
-- movies
 - three stooges
 - trailer
 ---

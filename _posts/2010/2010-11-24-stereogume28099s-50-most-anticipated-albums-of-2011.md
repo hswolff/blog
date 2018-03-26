@@ -4,7 +4,6 @@ slug: stereogume28099s-50-most-anticipated-albums-of-2011
 date: 2010-11-24T13:18:24.000Z
 updated: 2010-11-24T13:18:24.000Z
 tags:
-- 2011
 - music
 - stereogum
 - the avalanches

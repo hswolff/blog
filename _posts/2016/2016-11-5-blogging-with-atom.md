@@ -1,6 +1,6 @@
 ---
 title: Blogging With Atom
-date: 2016-11-5
+date: 2016-11-05
 slug: blogging-with-atom
 tags:
 - blogging

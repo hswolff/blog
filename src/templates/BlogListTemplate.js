@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'react-emotion';
+import Helmet from 'react-helmet';
 import { color } from '../utils/css';
 import { lighten } from 'polished';
 
@@ -17,6 +18,7 @@ export default ({ pathContext }) => {
 
   return (
     <div>
+      <Helmet title="Blog" />
       {!first && <BlogListNavigation {...navProps} />}
       {group.map(({ node }) => <BlogListItem key={node.id} {...node} />)}
       <BlogListNavigation {...navProps} />

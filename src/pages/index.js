@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import { DateTime } from 'luxon';
 
@@ -7,6 +8,7 @@ const IndexPage = props => {
   const { edges } = allMarkdownRemark;
   return (
     <div>
+      <Helmet title="Home" />
       <h1>Howdy! 👋</h1>
       <p>My name is Harry Wolff and welcome to my website!</p>
       <p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
+import Helmet from 'react-helmet';
 import BlogListItem from '../components/BlogListItem';
 
 export default function EpisodeTagsTemplate({ pathContext }) {
@@ -11,6 +12,7 @@ export default function EpisodeTagsTemplate({ pathContext }) {
 
     return (
       <div>
+        <Helmet title={`tag: ${name}`} />
         <h1>
           {nodes.length} link{nodes.length === 1 ? '' : 's'} tagged with {name}
         </h1>
@@ -24,6 +26,7 @@ export default function EpisodeTagsTemplate({ pathContext }) {
   // all tags page
   return (
     <div>
+      <Helmet title="All Tags" />
       <h1>Tags</h1>
       <ul className="tags">
         {Object.keys(tags).map(tagName => {

@@ -1,8 +1,10 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 export default function AboutPage() {
   return (
     <div>
+      <Helmet title="About" />
       <h1>About</h1>
       <p>Harry Wolff currently lives in New York City.</p>
       <p>Find him online at the following social networks.</p>

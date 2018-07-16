@@ -1,31 +1,32 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import { Link as GatsbyLink } from 'gatsby';
 import Helmet from 'react-helmet';
+import Layout from '../components/Layout';
 import BlogListItem from '../components/BlogListItem';
 
-export default function EpisodeTagsTemplate({ pathContext }) {
-  const { tags, tag } = pathContext;
+export default function EpisodeTagsTemplate({ pageContext }) {
+  const { tags, tag } = pageContext;
 
   // individual tag page
   if (tag) {
     const { name, nodes } = tag;
 
     return (
-      <div>
+      <Layout>
         <Helmet title={`tag: ${name}`} />
         <h1>
           {nodes.length} link{nodes.length === 1 ? '' : 's'} tagged with {name}
         </h1>
         {nodes.map(node => {
-          return <BlogListItem {...node} key={node.id} />;
+          return <BlogListItem {...node} key={node.fileAbsolutePath} />;
         })}
-      </div>
+      </Layout>
     );
   }
 
   // all tags page
   return (
-    <div>
+    <Layout>
       <Helmet title="All Tags" />
       <h1>Tags</h1>
       <ul className="tags">
@@ -40,6 +41,6 @@ export default function EpisodeTagsTemplate({ pathContext }) {
           );
         })}
       </ul>
-    </div>
+    </Layout>
   );
 }

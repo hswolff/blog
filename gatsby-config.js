@@ -77,11 +77,11 @@ module.exports = {
               allMarkdownRemark(
                 limit: 10
                 sort: { fields: [frontmatter___date], order: DESC }
-                filter: { id: { regex: "/_posts/" } }
+                filter: { fileAbsolutePath: { regex: "/_posts/" } }
               ) {
                 edges {
                   node {
-                    id
+                    fileAbsolutePath
                     excerpt(pruneLength: 280)
                     frontmatter {
                       title

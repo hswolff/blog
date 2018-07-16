@@ -10,12 +10,12 @@ exports.onCreateNode = function() {
   return Promise.all([addUrlToBlogPost].map(fn => fn.apply(this, arguments)));
 };
 
-function addUrlToBlogPost({ node, boundActionCreators }) {
+function addUrlToBlogPost({ node, actions }) {
   if (node.internal.type !== 'MarkdownRemark') {
     return;
   }
 
-  const { createNodeField } = boundActionCreators;
+  const { createNodeField } = actions;
 
   const { slug } = node.frontmatter;
 
@@ -34,7 +34,7 @@ function addUrlToBlogPost({ node, boundActionCreators }) {
   });
 }
 
-exports.createPages = async function({ boundActionCreators, graphql }) {
+exports.createPages = async function({ actions, graphql }) {
   const results = await Promise.all([
     graphql(getMarkdownQuery({ regex: '/_posts/' })),
     graphql(getMarkdownQuery({ regex: '/_pages/' })),
@@ -47,7 +47,7 @@ exports.createPages = async function({ boundActionCreators, graphql }) {
 
   const [blogPostResults, pageResults] = results;
 
-  const { createPage } = boundActionCreators;
+  const { createPage } = actions;
   const blogPostEdges = blogPostResults.data.allMarkdownRemark.edges;
   const pageEdges = pageResults.data.allMarkdownRemark.edges;
 
@@ -86,12 +86,12 @@ function getMarkdownQuery({ regex } = {}) {
       allMarkdownRemark(
         # limit: 36
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { id: { regex: "${regex}" } }
+        filter: { fileAbsolutePath: { regex: "${regex}" } }
       ) {
         totalCount
         edges {
           node {
-            id
+            fileAbsolutePath
             excerpt(pruneLength: 280)
             timeToRead
             frontmatter {

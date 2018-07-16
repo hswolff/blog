@@ -1,28 +1,31 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import styled from 'react-emotion';
 import Helmet from 'react-helmet';
 import { color } from '../utils/css';
 import { lighten } from 'polished';
 
+import Layout from '../components/Layout';
 import BlogListItem from '../components/BlogListItem';
 
 const lighterBgColor = lighten(0.4, color.background);
 
-export default ({ pathContext }) => {
-  const { group, index, first, last, pageCount, pathPrefix } = pathContext;
+export default ({ pageContext }) => {
+  const { group, index, first, last, pageCount, pathPrefix } = pageContext;
   const previousUrl = index - 1 == 1 ? '/blog/' : `${pathPrefix}${index - 1}/`;
   const nextUrl = `${pathPrefix}${index + 1}/`;
 
   const navProps = { first, previousUrl, index, pageCount, last, nextUrl };
 
   return (
-    <div>
+    <Layout>
       <Helmet title="Blog" />
       {!first && <BlogListNavigation {...navProps} />}
-      {group.map(({ node }) => <BlogListItem key={node.id} {...node} />)}
+      {group.map(({ node }) => (
+        <BlogListItem key={node.fileAbsolutePath} {...node} />
+      ))}
       <BlogListNavigation {...navProps} />
-    </div>
+    </Layout>
   );
 };
 

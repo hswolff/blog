@@ -1,8 +1,7 @@
 const path = require('path');
 const _ = require('lodash');
 const createPaginatedPages = require('gatsby-paginate');
-
-const createFullUrl = relativePath => `/blog/${relativePath}/`;
+const { createFullUrl, createTagMap } = require('./src/utils/helpers');
 
 // Lifecycle methods
 
@@ -145,33 +144,17 @@ function createPagePages({ edges, createPage }) {
 }
 
 function createTagPages({ createPage, edges }) {
-  const tagTemplate = path.resolve('src/templates/TagPageTemplate.js');
-
-  const tags = {};
-
-  edges.forEach(({ node }) => {
-    if (node.frontmatter.tags) {
-      node.frontmatter.tags.forEach(tag => {
-        if (!tags[tag]) {
-          tags[tag] = {
-            name: tag,
-            slug: createFullUrl(`tag/${tag}`),
-            nodes: [],
-          };
-        }
-        tags[tag].nodes.push(node);
-      });
-    }
-  });
+  const allTagsTemplate = path.resolve('src/templates/AllTagsPageTemplate.js');
 
   // Create the tags page with the list of tags from our tags object.
   createPage({
     path: createFullUrl('tags'),
-    component: tagTemplate,
-    context: {
-      tags,
-    },
+    component: allTagsTemplate,
   });
+
+  const tagTemplate = path.resolve('src/templates/TagPageTemplate.js');
+
+  const tags = createTagMap(edges);
 
   // For each of the tags in the post object, create a tag page.
   for (const tagName in tags) {
@@ -181,7 +164,7 @@ function createTagPages({ createPage, edges }) {
       path: tag.slug,
       component: tagTemplate,
       context: {
-        tag,
+        tag: tag.name,
       },
     });
   }

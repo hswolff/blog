@@ -1,46 +1,54 @@
 import React from 'react';
-import { Link as GatsbyLink } from 'gatsby';
+import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import BlogListItem from '../components/BlogListItem';
 
-export default function EpisodeTagsTemplate({ pageContext }) {
-  const { tags, tag } = pageContext;
-
-  // individual tag page
-  if (tag) {
-    const { name, nodes } = tag;
-
-    return (
-      <Layout>
-        <Helmet title={`tag: ${name}`} />
-        <h1>
-          {nodes.length} link{nodes.length === 1 ? '' : 's'} tagged with {name}
-        </h1>
-        {nodes.map(node => {
-          return <BlogListItem {...node} key={node.fileAbsolutePath} />;
-        })}
-      </Layout>
-    );
-  }
-
-  // all tags page
+export default function EpisodeTagsTemplate({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+  pageContext: { tag },
+}) {
   return (
     <Layout>
-      <Helmet title="All Tags" />
-      <h1>Tags</h1>
-      <ul className="tags">
-        {Object.keys(tags).map(tagName => {
-          const tag = tags[tagName];
-          return (
-            <li key={tagName}>
-              <GatsbyLink to={tag.slug}>
-                {tag.name} ({tag.nodes.length})
-              </GatsbyLink>
-            </li>
-          );
-        })}
-      </ul>
+      <Helmet title={`tag: ${tag}`} />
+      <h1>
+        {edges.length} link{edges.length === 1 ? '' : 's'} tagged with {tag}
+      </h1>
+      {edges.map(({ node }) => {
+        return <BlogListItem {...node} key={node.fileAbsolutePath} />;
+      })}
     </Layout>
   );
 }
+
+export const pageQuery = graphql`
+  query TagPageTemplate($tag: String!) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        fileAbsolutePath: { regex: "/_posts/" }
+        frontmatter: { tags: { in: [$tag] } }
+      }
+    ) {
+      edges {
+        node {
+          fileAbsolutePath
+          excerpt(pruneLength: 280)
+          timeToRead
+          frontmatter {
+            title
+            slug
+            date
+            tags
+          }
+          fields {
+            url
+            tagsUrls
+          }
+        }
+      }
+    }
+  }
+`;

@@ -1,8 +1,7 @@
 const path = require('path');
 const _ = require('lodash');
 const createPaginatedPages = require('gatsby-paginate');
-
-const createFullUrl = relativePath => `/blog/${relativePath}/`;
+const { createFullUrl, createTagMap } = require('./src/utils/helpers');
 
 // Lifecycle methods
 
@@ -10,12 +9,12 @@ exports.onCreateNode = function() {
   return Promise.all([addUrlToBlogPost].map(fn => fn.apply(this, arguments)));
 };
 
-function addUrlToBlogPost({ node, boundActionCreators }) {
+function addUrlToBlogPost({ node, actions }) {
   if (node.internal.type !== 'MarkdownRemark') {
     return;
   }
 
-  const { createNodeField } = boundActionCreators;
+  const { createNodeField } = actions;
 
   const { slug } = node.frontmatter;
 
@@ -34,7 +33,7 @@ function addUrlToBlogPost({ node, boundActionCreators }) {
   });
 }
 
-exports.createPages = async function({ boundActionCreators, graphql }) {
+exports.createPages = async function({ actions, graphql }) {
   const results = await Promise.all([
     graphql(getMarkdownQuery({ regex: '/_posts/' })),
     graphql(getMarkdownQuery({ regex: '/_pages/' })),
@@ -47,7 +46,7 @@ exports.createPages = async function({ boundActionCreators, graphql }) {
 
   const [blogPostResults, pageResults] = results;
 
-  const { createPage } = boundActionCreators;
+  const { createPage } = actions;
   const blogPostEdges = blogPostResults.data.allMarkdownRemark.edges;
   const pageEdges = pageResults.data.allMarkdownRemark.edges;
 
@@ -86,12 +85,12 @@ function getMarkdownQuery({ regex } = {}) {
       allMarkdownRemark(
         # limit: 36
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { id: { regex: "${regex}" } }
+        filter: { fileAbsolutePath: { regex: "${regex}" } }
       ) {
         totalCount
         edges {
           node {
-            id
+            fileAbsolutePath
             excerpt(pruneLength: 280)
             timeToRead
             frontmatter {
@@ -145,33 +144,17 @@ function createPagePages({ edges, createPage }) {
 }
 
 function createTagPages({ createPage, edges }) {
-  const tagTemplate = path.resolve('src/templates/TagPageTemplate.js');
-
-  const tags = {};
-
-  edges.forEach(({ node }) => {
-    if (node.frontmatter.tags) {
-      node.frontmatter.tags.forEach(tag => {
-        if (!tags[tag]) {
-          tags[tag] = {
-            name: tag,
-            slug: createFullUrl(`tag/${tag}`),
-            nodes: [],
-          };
-        }
-        tags[tag].nodes.push(node);
-      });
-    }
-  });
+  const allTagsTemplate = path.resolve('src/templates/AllTagsPageTemplate.js');
 
   // Create the tags page with the list of tags from our tags object.
   createPage({
     path: createFullUrl('tags'),
-    component: tagTemplate,
-    context: {
-      tags,
-    },
+    component: allTagsTemplate,
   });
+
+  const tagTemplate = path.resolve('src/templates/TagPageTemplate.js');
+
+  const tags = createTagMap(edges);
 
   // For each of the tags in the post object, create a tag page.
   for (const tagName in tags) {
@@ -181,7 +164,7 @@ function createTagPages({ createPage, edges }) {
       path: tag.slug,
       component: tagTemplate,
       context: {
-        tag,
+        tag: tag.name,
       },
     });
   }

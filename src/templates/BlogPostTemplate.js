@@ -1,6 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 import { injectGlobal } from 'emotion';
+import Layout from '../components/Layout';
 import BlogListItem from '../components/BlogListItem';
 import Disqus from '../components/Disqus';
 
@@ -12,7 +14,7 @@ export default function PostTemplate({ data: { markdownRemark } }) {
   } = markdownRemark;
 
   return (
-    <div>
+    <Layout>
       <Helmet title={title} />
       <BlogListItem asPage {...markdownRemark} />
       <div
@@ -25,7 +27,7 @@ export default function PostTemplate({ data: { markdownRemark } }) {
 
       <hr />
       <Disqus url={url} identifier={slug} title={title} />
-    </div>
+    </Layout>
   );
 }
 

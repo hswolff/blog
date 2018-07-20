@@ -1,13 +1,14 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 import { DateTime } from 'luxon';
+import Layout from '../components/Layout';
 
 const IndexPage = props => {
   const { allMarkdownRemark } = props.data;
   const { edges } = allMarkdownRemark;
   return (
-    <div>
+    <Layout>
       <Helmet title="Home" />
       <h1>Howdy! 👋</h1>
       <p>My name is Harry Wolff and welcome to my website!</p>
@@ -25,7 +26,7 @@ const IndexPage = props => {
       </p>
       <ul>
         {edges.map(({ node }) => (
-          <li key={node.id}>
+          <li key={node.fileAbsolutePath}>
             <Link to={node.fields.url}>{node.frontmatter.title}</Link>{' '}
             <small>
               ({DateTime.fromISO(node.frontmatter.date).toFormat('L/d/yy')})
@@ -40,7 +41,7 @@ const IndexPage = props => {
         <Link to="/about/">social networks</Link>.
       </p>
       <p>Thanks for stopping by!</p>
-    </div>
+    </Layout>
   );
 };
 
@@ -51,11 +52,11 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { id: { regex: "/_posts/" } }
+      filter: { fileAbsolutePath: { regex: "/_posts/" } }
     ) {
       edges {
         node {
-          id
+          fileAbsolutePath
           frontmatter {
             title
             slug

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { DateTime } from 'luxon';
+import Layout from '../../components/Layout';
 
 export default class BlogArchive extends Component {
   state = {
@@ -19,7 +20,7 @@ export default class BlogArchive extends Component {
     const years = Object.keys(groups).sort((a, b) => b - a);
 
     return (
-      <div>
+      <Layout>
         <Helmet title="Blog Archive" />
         <h1>Archive</h1>
         {_.map(years, year => (
@@ -40,7 +41,7 @@ export default class BlogArchive extends Component {
             {this.state[year] && (
               <ul>
                 {groups[year].map(({ node }) => (
-                  <li key={node.id}>
+                  <li key={node.fileAbsolutePath}>
                     <Link to={node.fields.url}>{node.frontmatter.title}</Link> ({DateTime.fromISO(
                       node.frontmatter.date
                     ).toFormat('MMMM d')})
@@ -50,7 +51,7 @@ export default class BlogArchive extends Component {
             )}
           </div>
         ))}
-      </div>
+      </Layout>
     );
   }
 }
@@ -59,11 +60,11 @@ export const pageQuery = graphql`
   query ArchivePosts {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { id: { regex: "/_posts/" } }
+      filter: { fileAbsolutePath: { regex: "/_posts/" } }
     ) {
       edges {
         node {
-          id
+          fileAbsolutePath
           frontmatter {
             title
             date
